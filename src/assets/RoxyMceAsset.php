@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Navatech.
- * @project roxymce
+ * @project yii2-roxy-ckeditor
  * @author  Phuong
  * @email   phuong17889[at]gmail.com
  * @date    15/02/2016
