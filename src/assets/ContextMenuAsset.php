@@ -11,17 +11,14 @@ namespace navatech\roxymce\assets;
 use yii\web\AssetBundle;
 use yii\web\View;
 
-class ContextMenuAsset extends AssetBundle {
-
-	public $sourcePath = '@vendor/navatech/yii2-roxymce/src/web';
-
-	public $css        = [
-		'css/jquery.contextMenu.min.css',
-	];
-
-	public $js         = [
-		'js/jquery.contextMenu.min.js',
-	];
-
-	public $jsOptions  = ['position' => View::POS_HEAD];
+class ContextMenuAsset extends AssetBundle
+{
+    public $sourcePath = '@vendor/navatech/yii2-roxymce/src/web';
+    public $css = [
+        'css/jquery.contextMenu.min.css',
+    ];
+    public $js = [
+        'js/jquery.contextMenu.min.js',
+    ];
+    public $jsOptions = ['position' => View::POS_HEAD];
 }

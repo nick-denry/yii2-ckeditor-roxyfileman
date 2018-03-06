@@ -19,31 +19,33 @@ use yii\web\View;
 /**
  * {@inheritDoc}
  */
-class RoxyMceAsset extends AssetBundle {
+class RoxyMceAsset extends AssetBundle
+{
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function init() {
-		parent::init();
-		$this->sourcePath = '@vendor/navatech/yii2-roxymce/src/web';
-		$this->depends    = [
-			'yii\web\JqueryAsset',
-			'yii\bootstrap\BootstrapAsset',
-			'yii\bootstrap\BootstrapPluginAsset',
-			'navatech\roxymce\assets\FontAwesomeAsset',
-			'navatech\roxymce\assets\BootstrapTreeviewAsset',
-			'navatech\roxymce\assets\LazyLoadAsset',
-			'navatech\roxymce\assets\FancyBoxAsset',
-			'navatech\roxymce\assets\ContextMenuAsset',
-		];
-		$this->css        = [
-			YII_ENV_DEV ? 'css/roxy.css' : 'css/roxy.min.css',
-		];
-		$this->js         = [
-			YII_ENV_DEV ? 'js/roxy.js' : 'js/roxy.min.js',
-		];
-		Yii::$app->view->registerJs('var msg_somethings_went_wrong = "' . Yii::t('roxy', 'Somethings went wrong') . '",
+    /**
+     * {@inheritDoc}
+     */
+    public function init()
+    {
+        parent::init();
+        $this->sourcePath = '@vendor/navatech/yii2-roxymce/src/web';
+        $this->depends = [
+            'yii\web\JqueryAsset',
+            'yii\bootstrap\BootstrapAsset',
+            'yii\bootstrap\BootstrapPluginAsset',
+            'navatech\roxymce\assets\FontAwesomeAsset',
+            'navatech\roxymce\assets\BootstrapTreeviewAsset',
+            'navatech\roxymce\assets\LazyLoadAsset',
+            'navatech\roxymce\assets\FancyBoxAsset',
+            'navatech\roxymce\assets\ContextMenuAsset',
+        ];
+        $this->css = [
+            YII_ENV_DEV ? 'css/roxy.css' : 'css/roxy.min.css',
+        ];
+        $this->js = [
+            YII_ENV_DEV ? 'js/roxy.js' : 'js/roxy.min.js',
+        ];
+        Yii::$app->view->registerJs('var msg_somethings_went_wrong = "' . Yii::t('roxy', 'Somethings went wrong') . '",
 msg_empty_directory = "' . Yii::t('roxy', 'Empty directory') . '",
 msg_please_select_one_folder = "' . Yii::t('roxy', 'Please select one folder') . '",
 msg_are_you_sure = "' . Yii::t('roxy', 'Are you sure?') . '",
@@ -61,5 +63,5 @@ url_file_copy = "' . Url::to(['/roxymce/management/file-copy']) . '",
 url_file_paste = "' . Url::to(['/roxymce/management/file-paste']) . '",
 url_file_remove = "' . Url::to(['/roxymce/management/file-remove']) . '";
 		', View::POS_HEAD);
-	}
+    }
 }
