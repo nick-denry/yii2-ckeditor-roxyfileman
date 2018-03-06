@@ -136,10 +136,10 @@ RoxyMceAsset::register($this);
                 </div>
             </div>
             <div class="col-sm-3 col-sm-offset-3 pull-right">
-                <button type="button" class="btn btn-success btn-roxymce-select" disabled title="<?= Yii::t('roxy', 'Select highlighted file') ?>">
+                <button type="button" class="btn btn-success btn-roxycke-select" disabled title="<?= Yii::t('roxy', 'Select highlighted file') ?>">
                     <i class="fa fa-check"></i> <?= Yii::t('roxy', 'Select') ?>
                 </button>
-                <button type="button" class="btn btn-default btn-roxymce-close">
+                <button type="button" class="btn btn-default btn-roxycke-close">
                     <i class="fa fa-ban"></i> <?= Yii::t('roxy', 'Close') ?>
                 </button>
             </div>

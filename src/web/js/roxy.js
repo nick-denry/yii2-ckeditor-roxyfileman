@@ -33,7 +33,7 @@ $(document).on("click", "[data-action='switch_view']", function() {
 	$(".file-body").removeClass("thumb_view list_view").addClass($(this).data('name'));
 	$(".first-row button,.first-row a").attr("disabled", "disabled");
 	$(".btn-file-preview").removeAttr('href');
-	$(".btn-roxymce-select").attr('disabled', 'disabled');
+	$(".btn-roxycke-select").attr('disabled', 'disabled');
 	$('#txtSearch').val('');
 	showFileList(current_url);
 });
@@ -57,7 +57,7 @@ $(document).on("click", ".file-list-item .thumb,.file-list-item .list", function
 	modal.find("input[name='file']").val(th.data('title'));
 	modal.find("input[name='name']").val(th.data('title'));
 	modal.find("input[name='folder']").val(node[0].path);
-	$(".btn-roxymce-select").removeAttr('disabled');
+	$(".btn-roxycke-select").removeAttr('disabled');
 });
 /**
  * Event create folder
@@ -276,7 +276,7 @@ $(document).on("change", "input#uploadform-file", function() {
 /**
  * Event close roxymce
  */
-$(document).on("click", '.btn-roxymce-close', function() {
+$(document).on("click", '.btn-roxycke-close', function() {
 	var win = (window.opener ? window.opener : window.parent);
 	if(win.tinyMCE) {
 		win.tinyMCE.activeEditor.windowManager.close();
@@ -286,7 +286,7 @@ $(document).on("click", '.btn-roxymce-close', function() {
 /**
  * Event selected file roxymce
  */
-$(document).on("click", '.btn-roxymce-select', function() {
+$(document).on("click", '.btn-roxycke-select', function() {
 	var win     = (window.opener ? window.opener : window.parent);
 	var file    = $(".file-list-item").find('.selected');
 	var input   = win.document.getElementById(getUrlParam('input'));
@@ -389,7 +389,7 @@ $(".file-list-item")[0].oncontextmenu = function(e) {
 		btn_file_preview.removeAttr('href').attr('title', btn_file_preview.text());
 		var btn_file_download = $(".btn-file-download");
 		btn_file_download.removeAttr('href').attr('title', btn_file_download.text());
-		$(".btn-roxymce-select").attr('disabled', 'disabled');
+		$(".btn-roxycke-select").attr('disabled', 'disabled');
 	}
 	return false;
 };
@@ -699,7 +699,7 @@ function reloadActionButton() {
 	btn_file_preview.removeAttr('href').attr('title', btn_file_preview.text());
 	var btn_file_download = $(".btn-file-download");
 	btn_file_download.removeAttr('href').attr('title', btn_file_download.text());
-	$(".btn-roxymce-select").attr('disabled', 'disabled');
+	$(".btn-roxycke-select").attr('disabled', 'disabled');
 }
 
 function closeDialog(dialog) {
