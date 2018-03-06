@@ -32,6 +32,6 @@ class Bootstrap implements BootstrapInterface
                 'sourceLanguage' => 'en-US',
             ];
         }
-        Yii::setAlias('roxymce', __DIR__);
+        Yii::setAlias('roxycke', __DIR__);
     }
 }

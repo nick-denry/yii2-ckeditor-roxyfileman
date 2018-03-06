@@ -53,14 +53,14 @@ class FileHelper
     {
         $extension = pathinfo($file, PATHINFO_EXTENSION);
         if ($is_big) {
-            $icon = Yii::getAlias('@roxymce/web/images/filetypes/big/file_extension_' . $extension . '.png');
+            $icon = Yii::getAlias('@roxycke/web/images/filetypes/big/file_extension_' . $extension . '.png');
         } else {
-            $icon = Yii::getAlias('@roxymce/web/images/filetypes/file_extension_' . $extension . '.png');
+            $icon = Yii::getAlias('@roxycke/web/images/filetypes/file_extension_' . $extension . '.png');
         }
         if (file_exists($icon)) {
             $data = file_get_contents($icon);
         } else {
-            $data = file_get_contents(Yii::getAlias('@roxymce/web/images/filetypes/unknown.png'));
+            $data = file_get_contents(Yii::getAlias('@roxycke/web/images/filetypes/unknown.png'));
         }
         return 'data:image/png;base64,' . base64_encode($data);
     }
