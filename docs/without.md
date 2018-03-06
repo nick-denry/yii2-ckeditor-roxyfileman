@@ -29,7 +29,7 @@ BootstrapTreeviewAsset::register($this);
 ?>
 <input type="text" id="fieldID">
 <a class="fancybox" data-fancybox-type="iframe" href="<?= Url::to([
-	'/roxymce/default',
+	'/roxycke/default',
 	'type'   => 'image',
 	'input'  => 'fieldID',
 	'dialog' => 'fancybox',
@@ -63,7 +63,7 @@ BootstrapTreeviewAsset::register($this);
 				<div class="row">
 					<div class="col-sm-12">
 						<iframe src="<?= Url::to([
-							'/roxymce/default',
+							'/roxycke/default',
 							'type'   => 'image',
 							'input'  => 'fieldID2',
 							'dialog' => 'modal',

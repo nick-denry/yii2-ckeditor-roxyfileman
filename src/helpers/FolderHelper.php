@@ -49,7 +49,7 @@ class FolderHelper
             'text' => basename($path),
             'path' => $path,
             'href' => Url::to([
-                '/roxymce/management/file-list',
+                '/roxycke/management/file-list',
                 'folder' => $path,
             ]),
             'icon' => 'glyphicon glyphicon-folder-close',
@@ -89,7 +89,7 @@ class FolderHelper
                     'text' => basename($dir),
                     'path' => $dir,
                     'href' => Url::to([
-                        '/roxymce/management/file-list',
+                        '/roxycke/management/file-list',
                         'folder' => $dir,
                     ]),
                     'icon' => 'glyphicon glyphicon-folder-close',
