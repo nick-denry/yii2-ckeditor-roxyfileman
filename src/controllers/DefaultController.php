@@ -36,12 +36,12 @@ class DefaultController extends Controller
         $uploadForm = new UploadForm();
         $defaultFolder = '';
         $defaultOrder = FolderHelper::SORT_DATE_DESC;
-        Yii::$app->cache->set('roxy_file_type', $type);
-        if ($module->rememberLastFolder && Yii::$app->cache->exists('roxy_last_folder')) {
-            $defaultFolder = Yii::$app->cache->get('roxy_last_folder');
+        Yii::$app->cache->set('roxycke_file_type', $type);
+        if ($module->rememberLastFolder && Yii::$app->cache->exists('roxycke_last_folder')) {
+            $defaultFolder = Yii::$app->cache->get('roxycke_last_folder');
         }
-        if ($module->rememberLastOrder && Yii::$app->cache->exists('roxy_last_order')) {
-            $defaultOrder = Yii::$app->cache->get('roxy_last_order');
+        if ($module->rememberLastOrder && Yii::$app->cache->exists('roxycke_last_order')) {
+            $defaultOrder = Yii::$app->cache->get('roxycke_last_order');
         }
         $fileListUrl = Url::to([
                     '/roxycke/management/file-list',

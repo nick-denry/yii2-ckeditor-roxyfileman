@@ -73,8 +73,8 @@ class Module extends \navatech\base\Module
         if (!is_dir(Yii::getAlias($this->uploadFolder))) {
             mkdir(Yii::getAlias($this->uploadFolder), 0777, true);
         }
-        if (!Yii::$app->cache->exists('roxy_last_order')) {
-            Yii::$app->cache->set('roxy_last_folder', Yii::getAlias($this->uploadFolder));
+        if (!Yii::$app->cache->exists('roxycke_last_order')) {
+            Yii::$app->cache->set('roxycke_last_folder', Yii::getAlias($this->uploadFolder));
         }
     }
 }

@@ -38,10 +38,10 @@ class FolderHelper
             'expanded' => true,
             'selected' => true,
         ];
-        if ($module->rememberLastFolder && Yii::$app->cache->exists('roxy_last_folder')) {
+        if ($module->rememberLastFolder && Yii::$app->cache->exists('roxycke_last_folder')) {
             $state = [
-                'checked' => $path == realpath(Yii::$app->cache->get('roxy_last_folder')),
-                'selected' => $path == realpath(Yii::$app->cache->get('roxy_last_folder')),
+                'checked' => $path == realpath(Yii::$app->cache->get('roxycke_last_folder')),
+                'selected' => $path == realpath(Yii::$app->cache->get('roxycke_last_folder')),
                 'expanded' => true,
             ];
         }
@@ -79,10 +79,10 @@ class FolderHelper
                     'checked' => false,
                     'selected' => false,
                 ];
-                if ($module->rememberLastFolder && Yii::$app->cache->exists('roxy_last_folder')) {
+                if ($module->rememberLastFolder && Yii::$app->cache->exists('roxycke_last_folder')) {
                     $state = [
-                        'checked' => $dir == realpath(Yii::$app->cache->get('roxy_last_folder')),
-                        'selected' => $dir == realpath(Yii::$app->cache->get('roxy_last_folder')),
+                        'checked' => $dir == realpath(Yii::$app->cache->get('roxycke_last_folder')),
+                        'selected' => $dir == realpath(Yii::$app->cache->get('roxycke_last_folder')),
                     ];
                 }
                 $array = [
@@ -120,7 +120,7 @@ class FolderHelper
             if (in_array($file, explode('|', $ignored)) || is_dir($filePath)) {
                 continue;
             }
-            if (Yii::$app->cache->get('roxy_file_type') == 'image') {
+            if (Yii::$app->cache->get('roxycke_file_type') == 'image') {
                 if (!is_array(getimagesize($filePath)) && !in_array(pathinfo($filePath, PATHINFO_EXTENSION), [
                             'svg',
                             'svgz',
@@ -128,7 +128,7 @@ class FolderHelper
                 ) {
                     continue;
                 }
-            } elseif (Yii::$app->cache->get('roxy_file_type') == 'media') {
+            } elseif (Yii::$app->cache->get('roxycke_file_type') == 'media') {
                 if (is_array(getimagesize($filePath))) {
                     continue;
                 }

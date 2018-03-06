@@ -141,17 +141,17 @@ class ManagementController extends Controller
             $folder = Yii::getAlias($this->module->uploadFolder);
         }
         if ($module->rememberLastFolder) {
-            Yii::$app->cache->set('roxy_last_folder', $folder);
+            Yii::$app->cache->set('roxycke_last_folder', $folder);
         }
         if ($sort == '') {
-            if ($module->rememberLastOrder && Yii::$app->cache->exists('roxy_last_order')) {
-                $sort = Yii::$app->cache->get('roxy_last_order');
+            if ($module->rememberLastOrder && Yii::$app->cache->exists('roxycke_last_order')) {
+                $sort = Yii::$app->cache->get('roxycke_last_order');
             } else {
                 $sort = FolderHelper::SORT_DATE_DESC;
             }
         }
         if ($module->rememberLastOrder) {
-            Yii::$app->cache->set('roxy_last_order', $sort);
+            Yii::$app->cache->set('roxycke_last_order', $sort);
         }
         $content = [];
         foreach (FolderHelper::fileList($folder, $sort) as $item) {
