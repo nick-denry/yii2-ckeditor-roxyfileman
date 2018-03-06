@@ -274,7 +274,7 @@ $(document).on("change", "input#uploadform-file", function() {
 	});
 });
 /**
- * Event close roxymce
+ * Event close roxycke
  */
 $(document).on("click", '.btn-roxycke-close', function() {
 	var win = (window.opener ? window.opener : window.parent);
@@ -284,7 +284,7 @@ $(document).on("click", '.btn-roxycke-close', function() {
 	closeDialog(getUrlParam('dialog'));
 });
 /**
- * Event selected file roxymce
+ * Event selected file roxycke
  */
 $(document).on("click", '.btn-roxycke-select', function() {
 	var win     = (window.opener ? window.opener : window.parent);
