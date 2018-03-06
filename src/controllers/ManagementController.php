@@ -363,10 +363,10 @@ class ManagementController extends Controller
         }
         $folder = realpath($folder);
         $filePath = $folder . DIRECTORY_SEPARATOR . $file;
-        if (Yii::$app->session->hasFlash('roxymce_copy')) {
-            Yii::$app->session->removeFlash('roxymce_copy');
+        if (Yii::$app->session->hasFlash('roxycke_copy')) {
+            Yii::$app->session->removeFlash('roxycke_copy');
         }
-        Yii::$app->session->setFlash('roxymce_cut', $filePath);
+        Yii::$app->session->setFlash('roxycke_cut', $filePath);
         return [
             'error' => 0,
         ];
@@ -390,10 +390,10 @@ class ManagementController extends Controller
         }
         $folder = realpath($folder);
         $filePath = $folder . DIRECTORY_SEPARATOR . $file;
-        if (Yii::$app->session->hasFlash('roxymce_cut')) {
-            Yii::$app->session->removeFlash('roxymce_cut');
+        if (Yii::$app->session->hasFlash('roxycke_cut')) {
+            Yii::$app->session->removeFlash('roxycke_cut');
         }
-        Yii::$app->session->setFlash('roxymce_copy', $filePath);
+        Yii::$app->session->setFlash('roxycke_copy', $filePath);
         return [
             'error' => 0,
         ];
@@ -415,11 +415,11 @@ class ManagementController extends Controller
         $folder = realpath($folder);
         $filePath = null;
         $return = false;
-        if (Yii::$app->session->hasFlash('roxymce_cut')) {
-            $filePath = Yii::$app->session->getFlash('roxymce_cut');
+        if (Yii::$app->session->hasFlash('roxycke_cut')) {
+            $filePath = Yii::$app->session->getFlash('roxycke_cut');
             $return = rename($filePath, $folder . DIRECTORY_SEPARATOR . basename($filePath));
-        } else if (Yii::$app->session->hasFlash('roxymce_copy')) {
-            $filePath = Yii::$app->session->getFlash('roxymce_copy');
+        } else if (Yii::$app->session->hasFlash('roxycke_copy')) {
+            $filePath = Yii::$app->session->getFlash('roxycke_copy');
             $return = copy($filePath, $folder . DIRECTORY_SEPARATOR . basename($filePath));
         }
         if ($return && $filePath != null) {
