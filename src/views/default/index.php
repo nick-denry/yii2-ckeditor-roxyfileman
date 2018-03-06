@@ -37,7 +37,7 @@ RoxyMceAsset::register($this);
                 <button type="button" class="btn btn-sm btn-danger btn-folder-remove" title="<?= Yii::t('roxy', 'Delete selected folder') ?>">
                     <i class="fa fa-trash"></i> <?= Yii::t('roxy', 'Delete') ?></button>
             </div>
-            <div class="scrollPane folder-list" data-url="<?= Url::to(['/roxymce/management/folder-list']) ?>">
+            <div class="scrollPane folder-list" data-url="<?= Url::to(['/roxycke/management/folder-list']) ?>">
                 <div class="folder-list-item"></div>
             </div>
         </div>
@@ -52,7 +52,7 @@ RoxyMceAsset::register($this);
                                 'name' => 'UploadForm[file][]',
                                 'data-href' => $fileListUrl,
                                 'data-url' => Url::to([
-                                    '/roxymce/management/file-upload',
+                                    '/roxycke/management/file-upload',
                                     'folder' => $defaultFolder,
                                 ]),
                             ])
@@ -154,7 +154,7 @@ RoxyMceAsset::register($this);
                 <h4 class="modal-title"><?= Yii::t('roxy', 'Create new folder') ?></h4>
             </div>
             <div class="modal-body">
-                <form action="<?= Url::to(['/roxymce/management/folder-create']) ?>" method="get" role="form">
+                <form action="<?= Url::to(['/roxycke/management/folder-create']) ?>" method="get" role="form">
                     <input type="hidden" name="folder" value="">
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" id="folder_name" placeholder="<?= Yii::t('roxy', 'Folder\'s name') ?>">
@@ -176,7 +176,7 @@ RoxyMceAsset::register($this);
                 <h4 class="modal-title"><?= Yii::t('roxy', 'Rename selected folder') ?></h4>
             </div>
             <div class="modal-body">
-                <form action="<?= Url::to(['/roxymce/management/folder-rename']) ?>" method="get" role="form">
+                <form action="<?= Url::to(['/roxycke/management/folder-rename']) ?>" method="get" role="form">
                     <input type="hidden" name="folder" value="">
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" id="folder_name" placeholder="<?= Yii::t('roxy', 'Folder\'s name') ?>">
@@ -198,7 +198,7 @@ RoxyMceAsset::register($this);
                 <h4 class="modal-title"><?= Yii::t('roxy', 'Rename selected file') ?></h4>
             </div>
             <div class="modal-body">
-                <form action="<?= Url::to(['/roxymce/management/file-rename']) ?>" method="get" role="form">
+                <form action="<?= Url::to(['/roxycke/management/file-rename']) ?>" method="get" role="form">
                     <input type="hidden" name="folder" value="">
                     <input type="hidden" name="file" value="">
                     <div class="form-group">

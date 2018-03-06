@@ -135,7 +135,7 @@ class ManagementController extends Controller
         /**
          * @var Module $module
          */
-        $module = Yii::$app->getModule('roxymce');
+        $module = Yii::$app->getModule('roxycke');
         $folder = realpath($folder);
         if ($folder == '') {
             $folder = Yii::getAlias($this->module->uploadFolder);

@@ -32,7 +32,7 @@ class DefaultController extends Controller
     public function actionIndex($type)
     {
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxymce');
+        $module = Yii::$app->getModule('roxycke');
         $uploadForm = new UploadForm();
         $defaultFolder = '';
         $defaultOrder = FolderHelper::SORT_DATE_DESC;
@@ -44,7 +44,7 @@ class DefaultController extends Controller
             $defaultOrder = Yii::$app->cache->get('roxy_last_order');
         }
         $fileListUrl = Url::to([
-                    '/roxymce/management/file-list',
+                    '/roxycke/management/file-list',
                     'folder' => $defaultFolder,
                     'sort' => $defaultOrder,
         ]);

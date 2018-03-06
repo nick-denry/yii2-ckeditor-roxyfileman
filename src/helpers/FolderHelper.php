@@ -32,7 +32,7 @@ class FolderHelper
     {
         $path = realpath($path);
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxymce');
+        $module = Yii::$app->getModule('roxycke');
         $state = [
             'checked' => true,
             'expanded' => true,
@@ -69,7 +69,7 @@ class FolderHelper
     {
         $path = realpath($path);
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxymce');
+        $module = Yii::$app->getModule('roxycke');
         $response = null;
         if (is_dir($path)) {
             $dirs = glob($path . '/*', GLOB_ONLYDIR);
@@ -169,7 +169,7 @@ class FolderHelper
      */
     public static function rootFolderName()
     {
-        $rootFolder = Yii::getAlias(Yii::$app->getModule('roxymce')->uploadFolder);
+        $rootFolder = Yii::getAlias(Yii::$app->getModule('roxycke')->uploadFolder);
         return basename($rootFolder);
     }
 }

@@ -30,7 +30,7 @@ class UploadForm extends Model
     public function rules()
     {
         /*         * @var Module $module */
-        $module = \Yii::$app->getModule('roxymce');
+        $module = \Yii::$app->getModule('roxycke');
         return [
             [
                 ['file'],
