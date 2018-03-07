@@ -44,16 +44,16 @@ class DefaultController extends Controller
             $defaultOrder = Yii::$app->cache->get('ckeditorRoxyFileman_last_order');
         }
         $fileListUrl = Url::to([
-                    '/ckeditorRoxyFileman/management/file-list',
-                    'folder' => $defaultFolder,
-                    'sort' => $defaultOrder,
+            '/ckeditorRoxyFileman/management/file-list',
+            'folder' => $defaultFolder,
+            'sort' => $defaultOrder,
         ]);
         return $this->renderAjax('index', [
-                    'module' => $module,
-                    'uploadForm' => $uploadForm,
-                    'fileListUrl' => $fileListUrl,
-                    'defaultOrder' => $defaultOrder,
-                    'defaultFolder' => $defaultFolder,
+            'module' => $module,
+            'uploadForm' => $uploadForm,
+            'fileListUrl' => $fileListUrl,
+            'defaultOrder' => $defaultOrder,
+            'defaultFolder' => $defaultFolder,
         ]);
     }
 }
