@@ -8,12 +8,12 @@
  * @time    4:19 CH
  * @version 2.0.0
  */
-namespace navatech\roxymce\controllers;
+namespace nickdenry\ckeditorRoxyFileman\controllers;
 
-use navatech\roxymce\helpers\FileHelper;
-use navatech\roxymce\helpers\FolderHelper;
-use navatech\roxymce\models\UploadForm;
-use navatech\roxymce\Module;
+use nickdenry\ckeditorRoxyFileman\helpers\FileHelper;
+use nickdenry\ckeditorRoxyFileman\helpers\FolderHelper;
+use nickdenry\ckeditorRoxyFileman\models\UploadForm;
+use nickdenry\ckeditorRoxyFileman\Module;
 use Yii;
 use yii\base\ErrorException;
 use yii\filters\ContentNegotiator;
@@ -74,16 +74,16 @@ class ManagementController extends Controller
             if (file_exists($folder . DIRECTORY_SEPARATOR . $name)) {
                 $response = [
                     'error' => 1,
-                    'message' => Yii::t('roxycke', 'Folder existed'),
+                    'message' => Yii::t('ckeditorRoxyFileman', 'Folder existed'),
                 ];
             } else {
                 if (mkdir($folder . DIRECTORY_SEPARATOR . $name, 0777, true)) {
                     $response = [
                         'error' => 0,
-                        'message' => Yii::t('roxycke', 'Folder created'),
+                        'message' => Yii::t('ckeditorRoxyFileman', 'Folder created'),
                         'data' => [
                             'href' => Url::to([
-                                '/roxycke/management/file-list',
+                                '/ckeditorRoxyFileman/management/file-list',
                                 'folder' => $folder . DIRECTORY_SEPARATOR . $name,
                             ]),
                             'text' => $name,
@@ -93,14 +93,14 @@ class ManagementController extends Controller
                 } else {
                     $response = [
                         'error' => 1,
-                        'message' => Yii::t('roxycke', 'Can\'t create folder in {0}', [$folder]),
+                        'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t create folder in {0}', [$folder]),
                     ];
                 }
             }
         } else {
             $response = [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Invalid directory {0}', [$folder]),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Invalid directory {0}', [$folder]),
             ];
         }
         return $response;
@@ -135,23 +135,23 @@ class ManagementController extends Controller
         /**
          * @var Module $module
          */
-        $module = Yii::$app->getModule('roxycke');
+        $module = Yii::$app->getModule('ckeditorRoxyFileman');
         $folder = realpath($folder);
         if ($folder == '') {
             $folder = Yii::getAlias($this->module->uploadFolder);
         }
         if ($module->rememberLastFolder) {
-            Yii::$app->cache->set('roxycke_last_folder', $folder);
+            Yii::$app->cache->set('ckeditorRoxyFileman_last_folder', $folder);
         }
         if ($sort == '') {
-            if ($module->rememberLastOrder && Yii::$app->cache->exists('roxycke_last_order')) {
-                $sort = Yii::$app->cache->get('roxycke_last_order');
+            if ($module->rememberLastOrder && Yii::$app->cache->exists('ckeditorRoxyFileman_last_order')) {
+                $sort = Yii::$app->cache->get('ckeditorRoxyFileman_last_order');
             } else {
                 $sort = FolderHelper::SORT_DATE_DESC;
             }
         }
         if ($module->rememberLastOrder) {
-            Yii::$app->cache->set('roxycke_last_order', $sort);
+            Yii::$app->cache->set('ckeditorRoxyFileman_last_order', $sort);
         }
         $content = [];
         foreach (FolderHelper::fileList($folder, $sort) as $item) {
@@ -183,7 +183,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Can\'t rename root folder'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t rename root folder'),
             ];
         }
         $folder = realpath($folder);
@@ -193,7 +193,7 @@ class ManagementController extends Controller
                 'error' => 0,
                 'data' => [
                     'href' => Url::to([
-                        '/roxycke/management/file-list',
+                        '/ckeditorRoxyFileman/management/file-list',
                         'folder' => $newFolder,
                     ]),
                     'text' => $name,
@@ -203,7 +203,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Somethings went wrong'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
             ];
         }
     }
@@ -221,7 +221,7 @@ class ManagementController extends Controller
         if ($folderProperties != null && isset($folderProperties[0]['nodes']) && $folderProperties[0]['nodes'] != null) {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Please remove all sub-folder before'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Please remove all sub-folder before'),
             ];
         }
         foreach (FolderHelper::fileList($folder) as $file) {
@@ -236,19 +236,19 @@ class ManagementController extends Controller
             } else {
                 return [
                     'error' => 1,
-                    'message' => Yii::t('roxycke', 'Somethings went wrong'),
+                    'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
                 ];
             }
         } catch (ErrorException $e) {
             if ($e->getCode() == 2) {
                 return [
                     'error' => 1,
-                    'message' => Yii::t('roxycke', 'Please remove all sub-folder before'),
+                    'message' => Yii::t('ckeditorRoxyFileman', 'Please remove all sub-folder before'),
                 ];
             }
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Somethings went wrong'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
             ];
         }
     }
@@ -282,7 +282,7 @@ class ManagementController extends Controller
         }
         return [
             'error' => 1,
-            'message' => Yii::t('roxycke', 'Somethings went wrong'),
+            'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
         ];
     }
 
@@ -298,7 +298,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Can\'t rename this file'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t rename this file'),
             ];
         }
         $folder = realpath($folder);
@@ -309,7 +309,7 @@ class ManagementController extends Controller
                 'error' => 0,
                 'data' => [
                     'href' => Url::to([
-                        '/roxycke/management/file-list',
+                        '/ckeditorRoxyFileman/management/file-list',
                         'folder' => $folder,
                     ]),
                     'name' => $name,
@@ -318,7 +318,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Somethings went wrong'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
             ];
         }
     }
@@ -328,7 +328,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Can\'t remove this file'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t remove this file'),
             ];
         }
         $folder = realpath($folder);
@@ -340,7 +340,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Somethings went wrong'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
             ];
         }
     }
@@ -358,15 +358,15 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Can\'t cut this file'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t cut this file'),
             ];
         }
         $folder = realpath($folder);
         $filePath = $folder . DIRECTORY_SEPARATOR . $file;
-        if (Yii::$app->session->hasFlash('roxycke_copy')) {
-            Yii::$app->session->removeFlash('roxycke_copy');
+        if (Yii::$app->session->hasFlash('ckeditorRoxyFileman_copy')) {
+            Yii::$app->session->removeFlash('ckeditorRoxyFileman_copy');
         }
-        Yii::$app->session->setFlash('roxycke_cut', $filePath);
+        Yii::$app->session->setFlash('ckeditorRoxyFileman_cut', $filePath);
         return [
             'error' => 0,
         ];
@@ -385,15 +385,15 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Can\'t copy this file'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t copy this file'),
             ];
         }
         $folder = realpath($folder);
         $filePath = $folder . DIRECTORY_SEPARATOR . $file;
-        if (Yii::$app->session->hasFlash('roxycke_cut')) {
-            Yii::$app->session->removeFlash('roxycke_cut');
+        if (Yii::$app->session->hasFlash('ckeditorRoxyFileman_cut')) {
+            Yii::$app->session->removeFlash('ckeditorRoxyFileman_cut');
         }
-        Yii::$app->session->setFlash('roxycke_copy', $filePath);
+        Yii::$app->session->setFlash('ckeditorRoxyFileman_copy', $filePath);
         return [
             'error' => 0,
         ];
@@ -409,17 +409,17 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Can\'t past the clipboard'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Can\'t past the clipboard'),
             ];
         }
         $folder = realpath($folder);
         $filePath = null;
         $return = false;
-        if (Yii::$app->session->hasFlash('roxycke_cut')) {
-            $filePath = Yii::$app->session->getFlash('roxycke_cut');
+        if (Yii::$app->session->hasFlash('ckeditorRoxyFileman_cut')) {
+            $filePath = Yii::$app->session->getFlash('ckeditorRoxyFileman_cut');
             $return = rename($filePath, $folder . DIRECTORY_SEPARATOR . basename($filePath));
-        } else if (Yii::$app->session->hasFlash('roxycke_copy')) {
-            $filePath = Yii::$app->session->getFlash('roxycke_copy');
+        } else if (Yii::$app->session->hasFlash('ckeditorRoxyFileman_copy')) {
+            $filePath = Yii::$app->session->getFlash('ckeditorRoxyFileman_copy');
             $return = copy($filePath, $folder . DIRECTORY_SEPARATOR . basename($filePath));
         }
         if ($return && $filePath != null) {
@@ -429,7 +429,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxycke', 'Somethings went wrong'),
+                'message' => Yii::t('ckeditorRoxyFileman', 'Somethings went wrong'),
             ];
         }
     }

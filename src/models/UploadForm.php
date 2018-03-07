@@ -10,10 +10,10 @@
  * @version 2.0.0
  */
 
-namespace navatech\roxymce\models;
+namespace nickdenry\ckeditorRoxyFileman\models;
 
-use navatech\roxymce\helpers\FileHelper;
-use navatech\roxymce\Module;
+use nickdenry\ckeditorRoxyFileman\helpers\FileHelper;
+use nickdenry\ckeditorRoxyFileman\Module;
 use yii\base\Model;
 use yii\web\UploadedFile;
 
@@ -30,7 +30,7 @@ class UploadForm extends Model
     public function rules()
     {
         /*         * @var Module $module */
-        $module = \Yii::$app->getModule('roxycke');
+        $module = \Yii::$app->getModule('ckeditorRoxyFileman');
         return [
             [
                 ['file'],

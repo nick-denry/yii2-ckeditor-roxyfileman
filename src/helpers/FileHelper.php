@@ -8,9 +8,9 @@
  * @time    4:19 CH
  * @version 2.0.0
  */
-namespace navatech\roxymce\helpers;
+namespace nickdenry\ckeditorRoxyFileman\helpers;
 
-use navatech\roxymce\Module;
+use nickdenry\ckeditorRoxyFileman\Module;
 use Yii;
 use yii\base\InvalidConfigException;
 
@@ -53,14 +53,14 @@ class FileHelper
     {
         $extension = pathinfo($file, PATHINFO_EXTENSION);
         if ($is_big) {
-            $icon = Yii::getAlias('@roxycke/web/images/filetypes/big/file_extension_' . $extension . '.png');
+            $icon = Yii::getAlias('@ckeditorRoxyFileman/web/images/filetypes/big/file_extension_' . $extension . '.png');
         } else {
-            $icon = Yii::getAlias('@roxycke/web/images/filetypes/file_extension_' . $extension . '.png');
+            $icon = Yii::getAlias('@ckeditorRoxyFileman/web/images/filetypes/file_extension_' . $extension . '.png');
         }
         if (file_exists($icon)) {
             $data = file_get_contents($icon);
         } else {
-            $data = file_get_contents(Yii::getAlias('@roxycke/web/images/filetypes/unknown.png'));
+            $data = file_get_contents(Yii::getAlias('@ckeditorRoxyFileman/web/images/filetypes/unknown.png'));
         }
         return 'data:image/png;base64,' . base64_encode($data);
     }
@@ -75,7 +75,7 @@ class FileHelper
     public static function fileUrl($path)
     {
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxycke');
+        $module = Yii::$app->getModule('ckeditorRoxyFileman');
         $uploadUrl = str_replace('\\', '/', Yii::getAlias($module->uploadFolder));
         $path = Yii::getAlias(str_replace('\\', '/', $path));
         return str_replace('\\', '/', str_replace($uploadUrl, $module->uploadUrl, $path));

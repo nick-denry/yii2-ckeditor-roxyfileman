@@ -8,7 +8,7 @@
  * @time    4:33 CH
  * @version 2.0.0
  */
-namespace navatech\roxymce;
+namespace nickdenry\ckeditorRoxyFileman;
 
 use Yii;
 use yii\base\InvalidParamException;
@@ -73,8 +73,8 @@ class Module extends \navatech\base\Module
         if (!is_dir(Yii::getAlias($this->uploadFolder))) {
             mkdir(Yii::getAlias($this->uploadFolder), 0777, true);
         }
-        if (!Yii::$app->cache->exists('roxycke_last_order')) {
-            Yii::$app->cache->set('roxycke_last_folder', Yii::getAlias($this->uploadFolder));
+        if (!Yii::$app->cache->exists('ckeditorRoxyFileman_last_order')) {
+            Yii::$app->cache->set('ckeditorRoxyFileman_last_folder', Yii::getAlias($this->uploadFolder));
         }
     }
 }

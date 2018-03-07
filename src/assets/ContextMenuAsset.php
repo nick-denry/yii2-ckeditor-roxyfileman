@@ -6,14 +6,14 @@
  * @email phuong17889@gmail.com
  * @time    12/7/2016 11:05 AM
  */
-namespace navatech\roxymce\assets;
+namespace nickdenry\ckeditorRoxyFileman\assets;
 
 use yii\web\AssetBundle;
 use yii\web\View;
 
 class ContextMenuAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/navatech/yii2-roxymce/src/web';
+    public $sourcePath = '@vendor/nick-denry/yii2-ckeditor-roxyfileman/src/web';
     public $css = [
         'css/jquery.contextMenu.min.css',
     ];

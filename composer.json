@@ -1,5 +1,5 @@
 {
-    "name": "navatech/yii2-roxymce",
+    "name": "nickdenry/ckeditorRoxyFileman",
     "description": "Integrate tinymce + roxy manager to yii2",
     "keywords": [
         "yii2",
@@ -12,7 +12,7 @@
     "license": "MIT",
     "homepage": "https://navatech.vn",
     "support": {
-        "source": "https://github.com/navatech/yii2-roxymce"
+        "source": "https://github.com/nickdenry/ckeditorRoxyFileman"
     },
     "authors": [
         {

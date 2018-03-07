@@ -8,11 +8,11 @@
  * @time    4:19 CH
  * @version 2.0.0
  */
-namespace navatech\roxymce\controllers;
+namespace nickdenry\ckeditorRoxyFileman\controllers;
 
-use navatech\roxymce\helpers\FolderHelper;
-use navatech\roxymce\models\UploadForm;
-use navatech\roxymce\Module;
+use nickdenry\ckeditorRoxyFileman\helpers\FolderHelper;
+use nickdenry\ckeditorRoxyFileman\models\UploadForm;
+use nickdenry\ckeditorRoxyFileman\Module;
 use Yii;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -32,19 +32,19 @@ class DefaultController extends Controller
     public function actionIndex($type)
     {
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxycke');
+        $module = Yii::$app->getModule('ckeditorRoxyFileman');
         $uploadForm = new UploadForm();
         $defaultFolder = '';
         $defaultOrder = FolderHelper::SORT_DATE_DESC;
-        Yii::$app->cache->set('roxycke_file_type', $type);
-        if ($module->rememberLastFolder && Yii::$app->cache->exists('roxycke_last_folder')) {
-            $defaultFolder = Yii::$app->cache->get('roxycke_last_folder');
+        Yii::$app->cache->set('ckeditorRoxyFileman_file_type', $type);
+        if ($module->rememberLastFolder && Yii::$app->cache->exists('ckeditorRoxyFileman_last_folder')) {
+            $defaultFolder = Yii::$app->cache->get('ckeditorRoxyFileman_last_folder');
         }
-        if ($module->rememberLastOrder && Yii::$app->cache->exists('roxycke_last_order')) {
-            $defaultOrder = Yii::$app->cache->get('roxycke_last_order');
+        if ($module->rememberLastOrder && Yii::$app->cache->exists('ckeditorRoxyFileman_last_order')) {
+            $defaultOrder = Yii::$app->cache->get('ckeditorRoxyFileman_last_order');
         }
         $fileListUrl = Url::to([
-                    '/roxycke/management/file-list',
+                    '/ckeditorRoxyFileman/management/file-list',
                     'folder' => $defaultFolder,
                     'sort' => $defaultOrder,
         ]);

@@ -16,10 +16,10 @@ In this case, you can use roxymce without TinyMCE intergrated. Just use with fan
 ~~~
 [php]
 <?php
-use navatech\roxymce\assets\BootstrapTreeviewAsset;
-use navatech\roxymce\assets\FancyBoxAsset;
-use navatech\roxymce\assets\FontAwesomeAsset;
-use navatech\roxymce\assets\LazyLoadAsset;
+use nickdenry\ckeditorRoxyFileman\assets\BootstrapTreeviewAsset;
+use nickdenry\ckeditorRoxyFileman\assets\FancyBoxAsset;
+use nickdenry\ckeditorRoxyFileman\assets\FontAwesomeAsset;
+use nickdenry\ckeditorRoxyFileman\assets\LazyLoadAsset;
 use yii\helpers\Url;
 
 FontAwesomeAsset::register($this);
@@ -29,7 +29,7 @@ BootstrapTreeviewAsset::register($this);
 ?>
 <input type="text" id="fieldID">
 <a class="fancybox" data-fancybox-type="iframe" href="<?= Url::to([
-	'/roxycke/default',
+	'/ckeditorRoxyFileman/default',
 	'type'   => 'image',
 	'input'  => 'fieldID',
 	'dialog' => 'fancybox',
@@ -43,10 +43,10 @@ BootstrapTreeviewAsset::register($this);
 ~~~
 [php]
 <?php
-use navatech\roxymce\assets\BootstrapTreeviewAsset;
-use navatech\roxymce\assets\FancyBoxAsset;
-use navatech\roxymce\assets\FontAwesomeAsset;
-use navatech\roxymce\assets\LazyLoadAsset;
+use nickdenry\ckeditorRoxyFileman\assets\BootstrapTreeviewAsset;
+use nickdenry\ckeditorRoxyFileman\assets\FancyBoxAsset;
+use nickdenry\ckeditorRoxyFileman\assets\FontAwesomeAsset;
+use nickdenry\ckeditorRoxyFileman\assets\LazyLoadAsset;
 use yii\helpers\Url;
 
 FontAwesomeAsset::register($this);
@@ -63,7 +63,7 @@ BootstrapTreeviewAsset::register($this);
 				<div class="row">
 					<div class="col-sm-12">
 						<iframe src="<?= Url::to([
-							'/roxycke/default',
+							'/ckeditorRoxyFileman/default',
 							'type'   => 'image',
 							'input'  => 'fieldID2',
 							'dialog' => 'modal',

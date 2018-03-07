@@ -8,9 +8,9 @@
  * @time    4:45 CH
  * @version 2.0.0
  */
-namespace navatech\roxymce\helpers;
+namespace nickdenry\ckeditorRoxyFileman\helpers;
 
-use navatech\roxymce\Module;
+use nickdenry\ckeditorRoxyFileman\Module;
 use Yii;
 use yii\helpers\Url;
 
@@ -32,16 +32,16 @@ class FolderHelper
     {
         $path = realpath($path);
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxycke');
+        $module = Yii::$app->getModule('ckeditorRoxyFileman');
         $state = [
             'checked' => true,
             'expanded' => true,
             'selected' => true,
         ];
-        if ($module->rememberLastFolder && Yii::$app->cache->exists('roxycke_last_folder')) {
+        if ($module->rememberLastFolder && Yii::$app->cache->exists('ckeditorRoxyFileman_last_folder')) {
             $state = [
-                'checked' => $path == realpath(Yii::$app->cache->get('roxycke_last_folder')),
-                'selected' => $path == realpath(Yii::$app->cache->get('roxycke_last_folder')),
+                'checked' => $path == realpath(Yii::$app->cache->get('ckeditorRoxyFileman_last_folder')),
+                'selected' => $path == realpath(Yii::$app->cache->get('ckeditorRoxyFileman_last_folder')),
                 'expanded' => true,
             ];
         }
@@ -49,7 +49,7 @@ class FolderHelper
             'text' => basename($path),
             'path' => $path,
             'href' => Url::to([
-                '/roxycke/management/file-list',
+                '/ckeditorRoxyFileman/management/file-list',
                 'folder' => $path,
             ]),
             'icon' => 'glyphicon glyphicon-folder-close',
@@ -69,7 +69,7 @@ class FolderHelper
     {
         $path = realpath($path);
         /*         * @var Module $module */
-        $module = Yii::$app->getModule('roxycke');
+        $module = Yii::$app->getModule('ckeditorRoxyFileman');
         $response = null;
         if (is_dir($path)) {
             $dirs = glob($path . '/*', GLOB_ONLYDIR);
@@ -79,17 +79,17 @@ class FolderHelper
                     'checked' => false,
                     'selected' => false,
                 ];
-                if ($module->rememberLastFolder && Yii::$app->cache->exists('roxycke_last_folder')) {
+                if ($module->rememberLastFolder && Yii::$app->cache->exists('ckeditorRoxyFileman_last_folder')) {
                     $state = [
-                        'checked' => $dir == realpath(Yii::$app->cache->get('roxycke_last_folder')),
-                        'selected' => $dir == realpath(Yii::$app->cache->get('roxycke_last_folder')),
+                        'checked' => $dir == realpath(Yii::$app->cache->get('ckeditorRoxyFileman_last_folder')),
+                        'selected' => $dir == realpath(Yii::$app->cache->get('ckeditorRoxyFileman_last_folder')),
                     ];
                 }
                 $array = [
                     'text' => basename($dir),
                     'path' => $dir,
                     'href' => Url::to([
-                        '/roxycke/management/file-list',
+                        '/ckeditorRoxyFileman/management/file-list',
                         'folder' => $dir,
                     ]),
                     'icon' => 'glyphicon glyphicon-folder-close',
@@ -120,7 +120,7 @@ class FolderHelper
             if (in_array($file, explode('|', $ignored)) || is_dir($filePath)) {
                 continue;
             }
-            if (Yii::$app->cache->get('roxycke_file_type') == 'image') {
+            if (Yii::$app->cache->get('ckeditorRoxyFileman_file_type') == 'image') {
                 if (!is_array(getimagesize($filePath)) && !in_array(pathinfo($filePath, PATHINFO_EXTENSION), [
                             'svg',
                             'svgz',
@@ -128,7 +128,7 @@ class FolderHelper
                 ) {
                     continue;
                 }
-            } elseif (Yii::$app->cache->get('roxycke_file_type') == 'media') {
+            } elseif (Yii::$app->cache->get('ckeditorRoxyFileman_file_type') == 'media') {
                 if (is_array(getimagesize($filePath))) {
                     continue;
                 }
@@ -169,7 +169,7 @@ class FolderHelper
      */
     public static function rootFolderName()
     {
-        $rootFolder = Yii::getAlias(Yii::$app->getModule('roxycke')->uploadFolder);
+        $rootFolder = Yii::getAlias(Yii::$app->getModule('ckeditorRoxyFileman')->uploadFolder);
         return basename($rootFolder);
     }
 }

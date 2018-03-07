@@ -8,9 +8,9 @@
  * @time    1:59 SA
  * @version 2.0.0
  */
-namespace navatech\roxymce\widgets;
+namespace nickdenry\ckeditorRoxyFileman\widgets;
 
-use navatech\roxymce\assets\TinyMceAsset;
+use nickdenry\ckeditorRoxyFileman\assets\TinyMceAsset;
 use yii\base\InvalidParamException;
 use yii\base\Widget;
 use yii\bootstrap\Html;
@@ -48,7 +48,7 @@ class RoxyMceWidget extends Widget
 
     /**
      * @var array RoxyMce options
-     * @see https://github.com/navatech/yii2-roxymce/blob/master/docs/widget.md
+     * @see https://github.com/nickdenry/ckeditorRoxyFileman/blob/master/docs/widget.md
      */
     public $options;
 

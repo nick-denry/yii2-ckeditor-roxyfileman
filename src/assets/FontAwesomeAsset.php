@@ -8,7 +8,7 @@
  * @time    12:09 CH
  * @version 2.0.0
  */
-namespace navatech\roxymce\assets;
+namespace nickdenry\ckeditorRoxyFileman\assets;
 
 use yii\web\AssetBundle;
 

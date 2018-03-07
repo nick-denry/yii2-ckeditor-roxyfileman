@@ -9,7 +9,7 @@
  * @time    11:50 PM
  * @version 2.0.0
  */
-namespace navatech\roxymce;
+namespace nickdenry\ckeditorRoxyFileman;
 
 use Yii;
 use yii\base\Application;
@@ -25,13 +25,13 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
-        if (!isset($app->get('i18n')->translations['roxy*'])) {
-            $app->get('i18n')->translations['roxy*'] = [
+        if (!isset($app->get('i18n')->translations['ckeditorRoxyFileman*'])) {
+            $app->get('i18n')->translations['ckeditorRoxyFileman*'] = [
                 'class' => PhpMessageSource::className(),
                 'basePath' => __DIR__ . '/messages',
                 'sourceLanguage' => 'en-US',
             ];
         }
-        Yii::setAlias('roxycke', __DIR__);
+        Yii::setAlias('ckeditorRoxyFileman', __DIR__);
     }
 }
