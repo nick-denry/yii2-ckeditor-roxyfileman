@@ -281,7 +281,7 @@ $(document).on("change", "input#uploadform-file", function () {
     });
 });
 /**
- * Event close roxycke
+ * Event close ckeditorRoxyFileman
  */
 $(document).on("click", '.btn-ckeditorRoxyFileman-close', function () {
     var win = (window.opener ? window.opener : window.parent);
@@ -291,7 +291,7 @@ $(document).on("click", '.btn-ckeditorRoxyFileman-close', function () {
     closeDialog(getUrlParam('dialog'));
 });
 /**
- * Event selected file roxycke
+ * Event selected file ckeditorRoxyFileman
  */
 $(document).on("click", '.btn-ckeditorRoxyFileman-select', function () {
     var win = (window.opener ? window.opener : window.parent);
