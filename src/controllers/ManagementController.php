@@ -74,13 +74,13 @@ class ManagementController extends Controller
             if (file_exists($folder . DIRECTORY_SEPARATOR . $name)) {
                 $response = [
                     'error' => 1,
-                    'message' => Yii::t('roxy', 'Folder existed'),
+                    'message' => Yii::t('roxycke', 'Folder existed'),
                 ];
             } else {
                 if (mkdir($folder . DIRECTORY_SEPARATOR . $name, 0777, true)) {
                     $response = [
                         'error' => 0,
-                        'message' => Yii::t('roxy', 'Folder created'),
+                        'message' => Yii::t('roxycke', 'Folder created'),
                         'data' => [
                             'href' => Url::to([
                                 '/roxycke/management/file-list',
@@ -93,14 +93,14 @@ class ManagementController extends Controller
                 } else {
                     $response = [
                         'error' => 1,
-                        'message' => Yii::t('roxy', 'Can\'t create folder in {0}', [$folder]),
+                        'message' => Yii::t('roxycke', 'Can\'t create folder in {0}', [$folder]),
                     ];
                 }
             }
         } else {
             $response = [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Invalid directory {0}', [$folder]),
+                'message' => Yii::t('roxycke', 'Invalid directory {0}', [$folder]),
             ];
         }
         return $response;
@@ -183,7 +183,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Can\'t rename root folder'),
+                'message' => Yii::t('roxycke', 'Can\'t rename root folder'),
             ];
         }
         $folder = realpath($folder);
@@ -203,7 +203,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Somethings went wrong'),
+                'message' => Yii::t('roxycke', 'Somethings went wrong'),
             ];
         }
     }
@@ -221,7 +221,7 @@ class ManagementController extends Controller
         if ($folderProperties != null && isset($folderProperties[0]['nodes']) && $folderProperties[0]['nodes'] != null) {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Please remove all sub-folder before'),
+                'message' => Yii::t('roxycke', 'Please remove all sub-folder before'),
             ];
         }
         foreach (FolderHelper::fileList($folder) as $file) {
@@ -236,19 +236,19 @@ class ManagementController extends Controller
             } else {
                 return [
                     'error' => 1,
-                    'message' => Yii::t('roxy', 'Somethings went wrong'),
+                    'message' => Yii::t('roxycke', 'Somethings went wrong'),
                 ];
             }
         } catch (ErrorException $e) {
             if ($e->getCode() == 2) {
                 return [
                     'error' => 1,
-                    'message' => Yii::t('roxy', 'Please remove all sub-folder before'),
+                    'message' => Yii::t('roxycke', 'Please remove all sub-folder before'),
                 ];
             }
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Somethings went wrong'),
+                'message' => Yii::t('roxycke', 'Somethings went wrong'),
             ];
         }
     }
@@ -282,7 +282,7 @@ class ManagementController extends Controller
         }
         return [
             'error' => 1,
-            'message' => Yii::t('roxy', 'Somethings went wrong'),
+            'message' => Yii::t('roxycke', 'Somethings went wrong'),
         ];
     }
 
@@ -298,7 +298,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Can\'t rename this file'),
+                'message' => Yii::t('roxycke', 'Can\'t rename this file'),
             ];
         }
         $folder = realpath($folder);
@@ -318,7 +318,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Somethings went wrong'),
+                'message' => Yii::t('roxycke', 'Somethings went wrong'),
             ];
         }
     }
@@ -328,7 +328,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Can\'t remove this file'),
+                'message' => Yii::t('roxycke', 'Can\'t remove this file'),
             ];
         }
         $folder = realpath($folder);
@@ -340,7 +340,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Somethings went wrong'),
+                'message' => Yii::t('roxycke', 'Somethings went wrong'),
             ];
         }
     }
@@ -358,7 +358,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Can\'t cut this file'),
+                'message' => Yii::t('roxycke', 'Can\'t cut this file'),
             ];
         }
         $folder = realpath($folder);
@@ -385,7 +385,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Can\'t copy this file'),
+                'message' => Yii::t('roxycke', 'Can\'t copy this file'),
             ];
         }
         $folder = realpath($folder);
@@ -409,7 +409,7 @@ class ManagementController extends Controller
         if ($folder == '') {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Can\'t past the clipboard'),
+                'message' => Yii::t('roxycke', 'Can\'t past the clipboard'),
             ];
         }
         $folder = realpath($folder);
@@ -429,7 +429,7 @@ class ManagementController extends Controller
         } else {
             return [
                 'error' => 1,
-                'message' => Yii::t('roxy', 'Somethings went wrong'),
+                'message' => Yii::t('roxycke', 'Somethings went wrong'),
             ];
         }
     }

@@ -28,14 +28,14 @@ RoxyMceAsset::register($this);
     <section class="body">
         <div class="col-sm-4 left-body">
             <div class="actions">
-                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" href="#folder-create" title="<?= Yii::t('roxy', 'Create new folder') ?>">
-                    <i class="fa fa-plus-square"></i> <?= Yii::t('roxy', 'Create') ?>
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" href="#folder-create" title="<?= Yii::t('roxycke', 'Create new folder') ?>">
+                    <i class="fa fa-plus-square"></i> <?= Yii::t('roxycke', 'Create') ?>
                 </button>
-                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" href="#folder-rename" title="<?= Yii::t('roxy', 'Rename selected folder') ?>">
-                    <i class="fa fa-pencil-square"></i> <?= Yii::t('roxy', 'Rename') ?>
+                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" href="#folder-rename" title="<?= Yii::t('roxycke', 'Rename selected folder') ?>">
+                    <i class="fa fa-pencil-square"></i> <?= Yii::t('roxycke', 'Rename') ?>
                 </button>
-                <button type="button" class="btn btn-sm btn-danger btn-folder-remove" title="<?= Yii::t('roxy', 'Delete selected folder') ?>">
-                    <i class="fa fa-trash"></i> <?= Yii::t('roxy', 'Delete') ?></button>
+                <button type="button" class="btn btn-sm btn-danger btn-folder-remove" title="<?= Yii::t('roxycke', 'Delete selected folder') ?>">
+                    <i class="fa fa-trash"></i> <?= Yii::t('roxycke', 'Delete') ?></button>
             </div>
             <div class="scrollPane folder-list" data-url="<?= Url::to(['/roxycke/management/folder-list']) ?>">
                 <div class="folder-list-item"></div>
@@ -45,7 +45,7 @@ RoxyMceAsset::register($this);
             <div class="actions first-row">
                 <div class="row">
                     <div class="col-sm-12">
-                        <label class="btn btn-sm btn-primary" title="<?= Yii::t('roxy', 'Upload files') ?>">
+                        <label class="btn btn-sm btn-primary" title="<?= Yii::t('roxycke', 'Upload files') ?>">
                             <?=
                             Html::activeFileInput($uploadForm, 'file', [
                                 'multiple' => true,
@@ -57,19 +57,19 @@ RoxyMceAsset::register($this);
                                 ]),
                             ])
                             ?>
-                            <i class="fa fa-plus"></i> <?= Yii::t('roxy', 'Add file') ?>
+                            <i class="fa fa-plus"></i> <?= Yii::t('roxycke', 'Add file') ?>
                         </label>
-                        <a class="btn btn-sm btn-info btn-file-preview" disabled="disabled" title="<?= Yii::t('roxy', 'Preview selected file') ?>">
-                            <i class="fa fa-search"></i> <?= Yii::t('roxy', 'Preview') ?>
+                        <a class="btn btn-sm btn-info btn-file-preview" disabled="disabled" title="<?= Yii::t('roxycke', 'Preview selected file') ?>">
+                            <i class="fa fa-search"></i> <?= Yii::t('roxycke', 'Preview') ?>
                         </a>
-                        <button type="button" class="btn btn-sm btn-warning btn-file-rename" disabled="disabled" title="<?= Yii::t('roxy', 'Rename file') ?>" data-toggle="modal" href="#file-rename">
-                            <i class="fa fa-pencil"></i> <?= Yii::t('roxy', 'Rename file') ?>
+                        <button type="button" class="btn btn-sm btn-warning btn-file-rename" disabled="disabled" title="<?= Yii::t('roxycke', 'Rename file') ?>" data-toggle="modal" href="#file-rename">
+                            <i class="fa fa-pencil"></i> <?= Yii::t('roxycke', 'Rename file') ?>
                         </button>
-                        <a class="btn btn-sm btn-success btn-file-download" disabled="disabled" title="<?= Yii::t('roxy', 'Download file') ?>">
-                            <i class="fa fa-download"></i> <?= Yii::t('roxy', 'Download') ?>
+                        <a class="btn btn-sm btn-success btn-file-download" disabled="disabled" title="<?= Yii::t('roxycke', 'Download file') ?>">
+                            <i class="fa fa-download"></i> <?= Yii::t('roxycke', 'Download') ?>
                         </a>
-                        <button type="button" class="btn btn-sm btn-danger btn-file-remove" disabled="disabled" title="<?= Yii::t('roxy', 'Delete file') ?>">
-                            <i class="fa fa-trash"></i> <?= Yii::t('roxy', 'Delete file') ?>
+                        <button type="button" class="btn btn-sm btn-danger btn-file-remove" disabled="disabled" title="<?= Yii::t('roxycke', 'Delete file') ?>">
+                            <i class="fa fa-trash"></i> <?= Yii::t('roxycke', 'Delete file') ?>
                         </button>
                     </div>
                 </div>
@@ -77,17 +77,17 @@ RoxyMceAsset::register($this);
             <div class="actions second-row">
                 <div class="row">
                     <div class="col-sm-4">
-                        <button type="button" data-action="switch_view" data-name="list_view" class="btn btn-default <?= $module->defaultView != 'list' ?: 'btn-primary' ?>" title="<?= Yii::t('roxy', 'List view') ?>">
+                        <button type="button" data-action="switch_view" data-name="list_view" class="btn btn-default <?= $module->defaultView != 'list' ?: 'btn-primary' ?>" title="<?= Yii::t('roxycke', 'List view') ?>">
                             <i class="fa fa-list"></i>
                         </button>
-                        <button type="button" data-action="switch_view" data-name="thumb_view" class="btn btn-default <?= $module->defaultView != 'thumb' ?: 'btn-primary' ?>" title="<?= Yii::t('roxy', 'Thumbnails view') ?>">
+                        <button type="button" data-action="switch_view" data-name="thumb_view" class="btn btn-default <?= $module->defaultView != 'thumb' ?: 'btn-primary' ?>" title="<?= Yii::t('roxycke', 'Thumbnails view') ?>">
                             <i class="fa fa-picture-o"></i>
                         </button>
                     </div>
                     <div class="col-sm-8">
                         <div class="form-inline">
                             <div class="form-group form-group-sm form-search">
-                                <input id="txtSearch" type="text" class="form-control" placeholder="<?= Yii::t('roxy', 'Search for...') ?>">
+                                <input id="txtSearch" type="text" class="form-control" placeholder="<?= Yii::t('roxycke', 'Search for...') ?>">
                                 <i class="fa fa-search"></i>
                             </div>
                         </div>
@@ -102,21 +102,21 @@ RoxyMceAsset::register($this);
                                 <div class="pull-left <?= ($defaultOrder == FolderHelper::SORT_NAME_ASC || $defaultOrder == FolderHelper::SORT_NAME_DESC) ? 'sorted' : '' ?>" rel="order" data-order="name" data-sort="<?= $defaultOrder == FolderHelper::SORT_NAME_ASC ? 'asc' : 'desc' ?>">
                                     <i class="fa fa-long-arrow-up"></i>
                                     <i class="fa fa-long-arrow-down"></i>
-                                    <span> <?= Yii::t('roxy', 'Name') ?></span>
+                                    <span> <?= Yii::t('roxycke', 'Name') ?></span>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="pull-right <?= ($defaultOrder == FolderHelper::SORT_SIZE_ASC || $defaultOrder == FolderHelper::SORT_SIZE_DESC) ? 'sorted' : '' ?>" rel="order" data-order="size" data-sort="<?= $defaultOrder == FolderHelper::SORT_SIZE_ASC ? 'asc' : 'desc' ?>">
                                     <i class="fa fa-long-arrow-up"></i>
                                     <i class="fa fa-long-arrow-down"></i>
-                                    <span> <?= Yii::t('roxy', 'Size') ?></span>
+                                    <span> <?= Yii::t('roxycke', 'Size') ?></span>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="pull-right <?= ($defaultOrder == FolderHelper::SORT_DATE_ASC || $defaultOrder == FolderHelper::SORT_DATE_DESC) ? 'sorted' : '' ?>" rel="order" data-order="date" data-sort="<?= $defaultOrder == FolderHelper::SORT_DATE_ASC ? 'asc' : 'desc' ?>">
                                     <i class="fa fa-long-arrow-up"></i>
                                     <i class="fa fa-long-arrow-down"></i>
-                                    <span> <?= Yii::t('roxy', 'Date') ?></span>
+                                    <span> <?= Yii::t('roxycke', 'Date') ?></span>
                                 </div>
                             </div>
                         </div>
@@ -136,11 +136,11 @@ RoxyMceAsset::register($this);
                 </div>
             </div>
             <div class="col-sm-3 col-sm-offset-3 pull-right">
-                <button type="button" class="btn btn-success btn-roxycke-select" disabled title="<?= Yii::t('roxy', 'Select highlighted file') ?>">
-                    <i class="fa fa-check"></i> <?= Yii::t('roxy', 'Select') ?>
+                <button type="button" class="btn btn-success btn-roxycke-select" disabled title="<?= Yii::t('roxycke', 'Select highlighted file') ?>">
+                    <i class="fa fa-check"></i> <?= Yii::t('roxycke', 'Select') ?>
                 </button>
                 <button type="button" class="btn btn-default btn-roxycke-close">
-                    <i class="fa fa-ban"></i> <?= Yii::t('roxy', 'Close') ?>
+                    <i class="fa fa-ban"></i> <?= Yii::t('roxycke', 'Close') ?>
                 </button>
             </div>
         </div>
@@ -151,19 +151,19 @@ RoxyMceAsset::register($this);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><?= Yii::t('roxy', 'Create new folder') ?></h4>
+                <h4 class="modal-title"><?= Yii::t('roxycke', 'Create new folder') ?></h4>
             </div>
             <div class="modal-body">
                 <form action="<?= Url::to(['/roxycke/management/folder-create']) ?>" method="get" role="form">
                     <input type="hidden" name="folder" value="">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" id="folder_name" placeholder="<?= Yii::t('roxy', 'Folder\'s name') ?>">
+                        <input type="text" class="form-control" name="name" id="folder_name" placeholder="<?= Yii::t('roxycke', 'Folder\'s name') ?>">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-submit"><?= Yii::t('roxy', 'Save') ?></button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('roxy', 'Close') ?></button>
+                <button type="button" class="btn btn-primary btn-submit"><?= Yii::t('roxycke', 'Save') ?></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('roxycke', 'Close') ?></button>
             </div>
         </div>
     </div>
@@ -173,19 +173,19 @@ RoxyMceAsset::register($this);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><?= Yii::t('roxy', 'Rename selected folder') ?></h4>
+                <h4 class="modal-title"><?= Yii::t('roxycke', 'Rename selected folder') ?></h4>
             </div>
             <div class="modal-body">
                 <form action="<?= Url::to(['/roxycke/management/folder-rename']) ?>" method="get" role="form">
                     <input type="hidden" name="folder" value="">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" id="folder_name" placeholder="<?= Yii::t('roxy', 'Folder\'s name') ?>">
+                        <input type="text" class="form-control" name="name" id="folder_name" placeholder="<?= Yii::t('roxycke', 'Folder\'s name') ?>">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-submit"><?= Yii::t('roxy', 'Save') ?></button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('roxy', 'Close') ?></button>
+                <button type="button" class="btn btn-primary btn-submit"><?= Yii::t('roxycke', 'Save') ?></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('roxycke', 'Close') ?></button>
             </div>
         </div>
     </div>
@@ -195,20 +195,20 @@ RoxyMceAsset::register($this);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><?= Yii::t('roxy', 'Rename selected file') ?></h4>
+                <h4 class="modal-title"><?= Yii::t('roxycke', 'Rename selected file') ?></h4>
             </div>
             <div class="modal-body">
                 <form action="<?= Url::to(['/roxycke/management/file-rename']) ?>" method="get" role="form">
                     <input type="hidden" name="folder" value="">
                     <input type="hidden" name="file" value="">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" id="file_name" placeholder="<?= Yii::t('roxy', 'File\'s name') ?>">
+                        <input type="text" class="form-control" name="name" id="file_name" placeholder="<?= Yii::t('roxycke', 'File\'s name') ?>">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-submit"><?= Yii::t('roxy', 'Save') ?></button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('roxy', 'Close') ?></button>
+                <button type="button" class="btn btn-primary btn-submit"><?= Yii::t('roxycke', 'Save') ?></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('roxycke', 'Close') ?></button>
             </div>
         </div>
     </div>
