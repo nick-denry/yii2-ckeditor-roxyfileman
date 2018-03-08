@@ -1,12 +1,7 @@
 <?php
 /**
- * Created by Navatech.
- * @project yii2-roxy-ckeditor
- * @author  Le Phuong
- * @email   phuong17889[at]gmail.com
- * @date    15/02/2016
- * @time    4:45 CH
- * @version 2.0.0
+ * @project yii2-ckeditor-roxyfileman
+ * @author  Nick Denry
  */
 namespace nickdenry\ckeditorRoxyFileman\helpers;
 

@@ -1,10 +1,7 @@
 <?php
 /**
- * Created by Navatech
- * @project hdchonloc
- * @author  Le Phuong
- * @email phuong17889@gmail.com
- * @time    12/7/2016 11:05 AM
+ * @project yii2-ckeditor-roxyfileman
+ * @author  Nick Denry
  */
 namespace nickdenry\ckeditorRoxyFileman\assets;
 

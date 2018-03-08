@@ -1,12 +1,7 @@
 <?php
 /**
- * Created by Navatech.
- * @project RoxyMce
- * @author  Le Phuong
- * @email   phuong17889[at]gmail.com
- * @date    28/01/2016
- * @time    1:59 SA
- * @version 2.0.0
+ * @project yii2-ckeditor-roxyfileman
+ * @author  Nick Denry
  */
 namespace nickdenry\ckeditorRoxyFileman\widgets;
 

@@ -1,12 +1,8 @@
 <?php
 /**
- * Created by Navatech.
- * @project RoxyMce
- * @author  Phuong
- * @email   phuong17889[at]gmail.com
- * @date    15/02/2016
- * @time    2:56 CH
- * @version 2.0.0
+ * @project yii2-ckeditor-roxyfileman
+ * @author  Nick Denry
+ * 
  * @var View       $this
  * @var Module     $module
  * @var UploadForm $uploadForm
