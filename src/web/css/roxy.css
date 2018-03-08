@@ -164,8 +164,8 @@ hr {
 .pull-right {
     padding: 7px;
 }
-i
-nput[type=file] {
+
+input[type=file] {
     display: none;
 }
 
