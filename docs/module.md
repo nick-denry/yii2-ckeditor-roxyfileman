@@ -13,11 +13,11 @@ Module configure
 ### Example
 Add to config file:
 ```
-	'modules' => [
-		'roxymce' => [
-			'class' => 'nickdenry\ckeditorRoxyFileman\Module',
-			'uploadFolder' => '@frontend/web/uploads/images',
-			'uploadUrl' => '/uploads/images',
-		],
-	],
+'modules' => [
+    'roxymce' => [
+        'class' => 'nickdenry\ckeditorRoxyFileman\Module',
+        'uploadFolder' => '@frontend/web/uploads/images',
+        'uploadUrl' => '/uploads/images',
+    ],
+],
 ```
