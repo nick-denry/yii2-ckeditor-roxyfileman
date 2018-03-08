@@ -25,13 +25,20 @@ RoxyMceAsset::register($this);
         <div class="row">
             <div class="col-sm-4 left-body">
                 <div class="actions">
-                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" href="#folder-create" title="<?= Yii::t('ckeditorRoxyFileman', 'Create new folder') ?>">
-                        <i class="fa fa-plus-square"></i> <?= Yii::t('ckeditorRoxyFileman', 'Create') ?>
+                    <button type="button" class="btn btn-sm btn-default ckeditor-dialog-ui-button" data-toggle="modal" href="#folder-create" title="<?= Yii::t('ckeditorRoxyFileman', 'Create new folder') ?>">
+                        <span class="fa-stack fa-sm">
+                            <i class="fa fa-folder fa-stack-2x" aria-hidden="true"></i>
+                            <i class="fa fa-plus fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                        </span>
+                        <?= Yii::t('ckeditorRoxyFileman', 'Create') ?>
                     </button>
-                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" href="#folder-rename" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename selected folder') ?>">
-                        <i class="fa fa-pencil-square"></i> <?= Yii::t('ckeditorRoxyFileman', 'Rename') ?>
+                    <button type="button" class="btn btn-sm btn-default ckeditor-dialog-ui-button" data-toggle="modal" href="#folder-rename" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename selected folder') ?>">
+                        <span class="fa-stack fa-sm">
+                            <i class="fa fa-folder fa-stack-2x" aria-hidden="true"></i>
+                            <i class="fa fa-pencil fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                        </span> <?= Yii::t('ckeditorRoxyFileman', 'Rename') ?>
                     </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-folder-remove" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete selected folder') ?>">
+                    <button type="button" class="btn btn-sm btn-default btn-folder-remove ckeditor-dialog-ui-button" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete selected folder') ?>">
                         <i class="fa fa-trash"></i> <?= Yii::t('ckeditorRoxyFileman', 'Delete') ?></button>
                 </div>
                 <div class="scrollPane folder-list" data-url="<?= Url::to(['/ckeditorRoxyFileman/management/folder-list']) ?>">
@@ -42,7 +49,7 @@ RoxyMceAsset::register($this);
                 <div class="actions first-row">
                     <div class="row">
                         <div class="col-sm-12">
-                            <label class="btn btn-sm btn-primary" title="<?= Yii::t('ckeditorRoxyFileman', 'Upload files') ?>">
+                            <label class="btn btn-sm btn-default ckeditor-dialog-ui-button" title="<?= Yii::t('ckeditorRoxyFileman', 'Upload files') ?>">
                                 <?=
                                 Html::activeFileInput($uploadForm, 'file', [
                                     'multiple' => true,
@@ -54,18 +61,18 @@ RoxyMceAsset::register($this);
                                     ]),
                                 ])
                                 ?>
-                                <i class="fa fa-plus"></i> <?= Yii::t('ckeditorRoxyFileman', 'Add file') ?>
+                                <i class="fa fa-upload"></i> <?= Yii::t('ckeditorRoxyFileman', 'Add file') ?>
                             </label>
-                            <a class="btn btn-sm btn-info btn-file-preview" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Preview selected file') ?>">
+                            <a class="btn btn-sm btn-default btn-file-preview ckeditor-dialog-ui-button" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Preview selected file') ?>">
                                 <i class="fa fa-search"></i> <?= Yii::t('ckeditorRoxyFileman', 'Preview') ?>
                             </a>
-                            <button type="button" class="btn btn-sm btn-warning btn-file-rename" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>" data-toggle="modal" href="#file-rename">
+                            <button type="button" class="btn btn-sm btn-default btn-file-rename ckeditor-dialog-ui-button" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>" data-toggle="modal" href="#file-rename">
                                 <i class="fa fa-pencil"></i> <?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>
                             </button>
-                            <a class="btn btn-sm btn-success btn-file-download" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Download file') ?>">
+                            <a class="btn btn-sm btn-default btn-file-download ckeditor-dialog-ui-button" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Download file') ?>">
                                 <i class="fa fa-download"></i> <?= Yii::t('ckeditorRoxyFileman', 'Download') ?>
                             </a>
-                            <button type="button" class="btn btn-sm btn-danger btn-file-remove" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>">
+                            <button type="button" class="btn btn-sm btn-default btn-file-remove ckeditor-dialog-ui-button" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>">
                                 <i class="fa fa-trash"></i> <?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>
                             </button>
                         </div>
@@ -138,7 +145,7 @@ RoxyMceAsset::register($this);
                     <i class="fa fa-check"></i> <?= Yii::t('ckeditorRoxyFileman', 'Select') ?>
                 </button>
                 <button type="button" class="btn btn-default btn-ckeditorRoxyFileman-close">
-                    <i class="fa fa-ban"></i> <?= Yii::t('ckeditorRoxyFileman', 'Close') ?>
+                    <i class="fa fa-times"></i> <?= Yii::t('ckeditorRoxyFileman', 'Close') ?>
                 </button>
             </div>
         </div>
