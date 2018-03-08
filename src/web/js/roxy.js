@@ -287,6 +287,12 @@ $(document).on("click", '.btn-ckeditorRoxyFileman-close', function () {
     closeDialog(getUrlParam('dialog'));
 });
 /**
+ * Event doubleclick file
+ */
+$(document).on("dblclick", ".file-list-item .thumb,.file-list-item .list", function() {
+   $('.btn-ckeditorRoxyFileman-select').click();
+});
+/**
  * Event file selected at ckeditorRoxyFileman
  */
 $(document).on("click", '.btn-ckeditorRoxyFileman-select', function () {
