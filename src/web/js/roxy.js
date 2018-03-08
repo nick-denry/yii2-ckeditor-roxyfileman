@@ -284,30 +284,21 @@ $(document).on("change", "input#uploadform-file", function () {
  * Event close ckeditorRoxyFileman
  */
 $(document).on("click", '.btn-ckeditorRoxyFileman-close', function () {
-    var win = (window.opener ? window.opener : window.parent);
-    if (win.tinyMCE) {
-        win.tinyMCE.activeEditor.windowManager.close();
-    }
     closeDialog(getUrlParam('dialog'));
 });
 /**
- * Event selected file ckeditorRoxyFileman
+ * Event file selected at ckeditorRoxyFileman
  */
 $(document).on("click", '.btn-ckeditorRoxyFileman-select', function () {
     var win = (window.opener ? window.opener : window.parent);
     var file = $(".file-list-item").find('.selected');
-    var input = win.document.getElementById(getUrlParam('input'));
-    input.value = file.attr('data-url');
-    if (typeof (win.ImageDialog) !== "undefined") {
-        if (win.ImageDialog.getImageData) {
-            win.ImageDialog.getImageData();
-        }
-        if (win.ImageDialog.showPreviewImage()) {
-            win.ImageDialog.showPreviewImage(file.attr('data-url'));
-        }
+    var inputParam = getUrlParam('input');
+    if (inputParam) {
+        var inputEl = win.document.getElementById(inputParam);
+        inputEl.value = file.attr('data-url');
     }
-    if (win.tinyMCE) {
-        win.tinyMCE.activeEditor.windowManager.close();
+    if (win.CKEDITOR) {
+        win.CKEDITOR.tools.callFunction(getUrlParam('CKEditorFuncNum'), file.attr('data-url'));
     }
     closeDialog(getUrlParam('dialog'));
 });
@@ -623,7 +614,7 @@ function showFolderList(url) {
 }
 
 /**
- * Function return url for tinymce
+ * Function to get url param
  * */
 function getUrlParam(varName, url) {
     var ret = '';
@@ -718,6 +709,9 @@ function closeDialog(dialog) {
         case 'modal':
             var modalId = parent.$('.modal-roxy').attr('id');
             parent.$('#' + modalId).modal('hide');
+            break;
+        default:
+            window.close();
             break;
     }
 }
