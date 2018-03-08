@@ -1,31 +1,32 @@
 {
-    "name": "nickdenry/ckeditorRoxyFileman",
-    "description": "Integrate tinymce + roxy manager to yii2",
+    "name": "nick-denry/yii2-ckeditor-roxyfileman",
+    "description": "Yii2 integration of Roxy File Manager to CKEditor",
     "keywords": [
         "yii2",
-        "navatech",
-        "tinymce",
+        "ckeditor",
         "file manager",
         "roxy"
     ],
     "type": "yii2-extension",
     "license": "MIT",
-    "homepage": "https://navatech.vn",
+    "homepage": "https://github.com/nick-denry/yii2-ckeditor-roxyfileman",
     "support": {
-        "source": "https://github.com/nickdenry/ckeditorRoxyFileman"
+        "issues": "https://github.com/nick-denry/yii2-ckeditor-roxyfileman/issues",
+        "source": "https://github.com/nick-denry/yii2-ckeditor-roxyfileman"
     },
     "authors": [
         {
-            "name": "Le Phuong",
-            "email": "phuong17889@gmail.com"
+            "name": "Nick Denry",
+            "email": "nick.denry@gmail.com"
         }
     ],
     "require": {
+        "yiisoft/yii2": "^2.0",
+        "php": ">=5.6",
         "ext-gd": "*",
         "ext-mbstring": "*",
         "ext-zip": "*",
         "navatech/yii2-navatech-base": "1.0.0.2",
-        "bower-asset/tinymce": "^4.3",
         "bower-asset/fontawesome": "^4.6",
         "bower-asset/patternfly-bootstrap-treeview": "~2.1",
         "bower-asset/jquery.lazyload": "~1.9",
@@ -36,10 +37,10 @@
     },
     "autoload": {
         "psr-4": {
-            "navatech\\roxymce\\": "src"
+            "nickdenry\\ckeditorRoxyFileman\\": "src"
         }
     },
     "extra": {
-        "bootstrap": "navatech\\roxymce\\Bootstrap"
+        "bootstrap": "nickdenry\\ckeditorRoxyFileman\\Bootstrap"
     }
 }
