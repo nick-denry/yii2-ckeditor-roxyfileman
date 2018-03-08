@@ -17,11 +17,12 @@ class RoxyFileManager
     /**
      * Return filemanager Url
      */
-    public static function getUrl($type = 'image')
+    public static function getUrl()
     {
-        $managerUrl = Yii::$app->urlManager->createUrl('/ckeditorRoxyFileman/default').'?type='.$type;
+        $managerUrl = Yii::$app->urlManager->createUrl('/ckeditorRoxyFileman/default');
         return $managerUrl;
     }
+
     /**
      * Creates RoxyFileManager CKEditor options.
      *
@@ -32,9 +33,9 @@ class RoxyFileManager
     {
 
         return ArrayHelper::merge([
-            'filebrowserBrowseUrl' => self::getUrl('media'),
-            'filebrowserImageBrowseUrl' => self::getUrl('image'),
-            'filebrowserFlashBrowseUrl' => self::getUrl('media'),
+            'filebrowserBrowseUrl' => self::getUrl().'?type=media',
+            'filebrowserImageBrowseUrl' => self::getUrl().'?type=image',
+            'filebrowserFlashBrowseUrl' => self::getUrl().'?type=media',
         ], $cleintOptions);
     }
 }

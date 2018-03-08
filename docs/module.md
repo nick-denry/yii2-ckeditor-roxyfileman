@@ -12,9 +12,9 @@ Module configure
 
 ### Example
 Add to config file:
-```
+```php
 'modules' => [
-    'roxymce' => [
+    'ckeditorRoxyFileman' => [
         'class' => 'nickdenry\ckeditorRoxyFileman\Module',
         'uploadFolder' => '@frontend/web/uploads/images',
         'uploadUrl' => '/uploads/images',

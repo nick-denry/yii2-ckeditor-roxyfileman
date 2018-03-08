@@ -34,3 +34,7 @@ Docs
 Screenshot
 ---
 ![RoxyFileManager ckeditor](docs/screenshot.png)
+
+Thanks
+---
+Project inspired by [navatech/yii2-roxymce](https://github.com/navatech/yii2-roxymce/). Thanks to @phuong17889
