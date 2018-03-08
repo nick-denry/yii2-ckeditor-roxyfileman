@@ -164,12 +164,8 @@ hr {
 .pull-right {
     padding: 7px;
 }
-
-.mce-window[aria-label="RoxyMce"] {
-    position: absolute !important;
-}
-
-input[type=file] {
+i
+nput[type=file] {
     display: none;
 }
 
