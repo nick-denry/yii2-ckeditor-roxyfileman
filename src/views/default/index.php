@@ -2,7 +2,7 @@
 /**
  * @project yii2-ckeditor-roxyfileman
  * @author  Nick Denry
- * 
+ *
  * @var View       $this
  * @var Module     $module
  * @var UploadForm $uploadForm
@@ -20,104 +20,106 @@ use yii\web\View;
 
 RoxyMceAsset::register($this);
 ?>
-<div class="wrapper">
+<div class="wrapper container-fluid">
     <section class="body">
-        <div class="col-sm-4 left-body">
-            <div class="actions">
-                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" href="#folder-create" title="<?= Yii::t('ckeditorRoxyFileman', 'Create new folder') ?>">
-                    <i class="fa fa-plus-square"></i> <?= Yii::t('ckeditorRoxyFileman', 'Create') ?>
-                </button>
-                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" href="#folder-rename" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename selected folder') ?>">
-                    <i class="fa fa-pencil-square"></i> <?= Yii::t('ckeditorRoxyFileman', 'Rename') ?>
-                </button>
-                <button type="button" class="btn btn-sm btn-danger btn-folder-remove" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete selected folder') ?>">
-                    <i class="fa fa-trash"></i> <?= Yii::t('ckeditorRoxyFileman', 'Delete') ?></button>
-            </div>
-            <div class="scrollPane folder-list" data-url="<?= Url::to(['/ckeditorRoxyFileman/management/folder-list']) ?>">
-                <div class="folder-list-item"></div>
-            </div>
-        </div>
-        <div class="col-sm-8 right-body">
-            <div class="actions first-row">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <label class="btn btn-sm btn-primary" title="<?= Yii::t('ckeditorRoxyFileman', 'Upload files') ?>">
-                            <?=
-                            Html::activeFileInput($uploadForm, 'file', [
-                                'multiple' => true,
-                                'name' => 'UploadForm[file][]',
-                                'data-href' => $fileListUrl,
-                                'data-url' => Url::to([
-                                    '/ckeditorRoxyFileman/management/file-upload',
-                                    'folder' => $defaultFolder,
-                                ]),
-                            ])
-                            ?>
-                            <i class="fa fa-plus"></i> <?= Yii::t('ckeditorRoxyFileman', 'Add file') ?>
-                        </label>
-                        <a class="btn btn-sm btn-info btn-file-preview" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Preview selected file') ?>">
-                            <i class="fa fa-search"></i> <?= Yii::t('ckeditorRoxyFileman', 'Preview') ?>
-                        </a>
-                        <button type="button" class="btn btn-sm btn-warning btn-file-rename" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>" data-toggle="modal" href="#file-rename">
-                            <i class="fa fa-pencil"></i> <?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>
-                        </button>
-                        <a class="btn btn-sm btn-success btn-file-download" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Download file') ?>">
-                            <i class="fa fa-download"></i> <?= Yii::t('ckeditorRoxyFileman', 'Download') ?>
-                        </a>
-                        <button type="button" class="btn btn-sm btn-danger btn-file-remove" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>">
-                            <i class="fa fa-trash"></i> <?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>
-                        </button>
-                    </div>
+        <div class="row">
+            <div class="col-sm-4 left-body">
+                <div class="actions">
+                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" href="#folder-create" title="<?= Yii::t('ckeditorRoxyFileman', 'Create new folder') ?>">
+                        <i class="fa fa-plus-square"></i> <?= Yii::t('ckeditorRoxyFileman', 'Create') ?>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" href="#folder-rename" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename selected folder') ?>">
+                        <i class="fa fa-pencil-square"></i> <?= Yii::t('ckeditorRoxyFileman', 'Rename') ?>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger btn-folder-remove" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete selected folder') ?>">
+                        <i class="fa fa-trash"></i> <?= Yii::t('ckeditorRoxyFileman', 'Delete') ?></button>
+                </div>
+                <div class="scrollPane folder-list" data-url="<?= Url::to(['/ckeditorRoxyFileman/management/folder-list']) ?>">
+                    <div class="folder-list-item"></div>
                 </div>
             </div>
-            <div class="actions second-row">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <button type="button" data-action="switch_view" data-name="list_view" class="btn btn-default <?= $module->defaultView != 'list' ?: 'btn-primary' ?>" title="<?= Yii::t('ckeditorRoxyFileman', 'List view') ?>">
-                            <i class="fa fa-list"></i>
-                        </button>
-                        <button type="button" data-action="switch_view" data-name="thumb_view" class="btn btn-default <?= $module->defaultView != 'thumb' ?: 'btn-primary' ?>" title="<?= Yii::t('ckeditorRoxyFileman', 'Thumbnails view') ?>">
-                            <i class="fa fa-picture-o"></i>
-                        </button>
+            <div class="col-sm-8 right-body">
+                <div class="actions first-row">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="btn btn-sm btn-primary" title="<?= Yii::t('ckeditorRoxyFileman', 'Upload files') ?>">
+                                <?=
+                                Html::activeFileInput($uploadForm, 'file', [
+                                    'multiple' => true,
+                                    'name' => 'UploadForm[file][]',
+                                    'data-href' => $fileListUrl,
+                                    'data-url' => Url::to([
+                                        '/ckeditorRoxyFileman/management/file-upload',
+                                        'folder' => $defaultFolder,
+                                    ]),
+                                ])
+                                ?>
+                                <i class="fa fa-plus"></i> <?= Yii::t('ckeditorRoxyFileman', 'Add file') ?>
+                            </label>
+                            <a class="btn btn-sm btn-info btn-file-preview" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Preview selected file') ?>">
+                                <i class="fa fa-search"></i> <?= Yii::t('ckeditorRoxyFileman', 'Preview') ?>
+                            </a>
+                            <button type="button" class="btn btn-sm btn-warning btn-file-rename" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>" data-toggle="modal" href="#file-rename">
+                                <i class="fa fa-pencil"></i> <?= Yii::t('ckeditorRoxyFileman', 'Rename file') ?>
+                            </button>
+                            <a class="btn btn-sm btn-success btn-file-download" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Download file') ?>">
+                                <i class="fa fa-download"></i> <?= Yii::t('ckeditorRoxyFileman', 'Download') ?>
+                            </a>
+                            <button type="button" class="btn btn-sm btn-danger btn-file-remove" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>">
+                                <i class="fa fa-trash"></i> <?= Yii::t('ckeditorRoxyFileman', 'Delete file') ?>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <div class="form-inline">
-                            <div class="form-group form-group-sm form-search">
-                                <input id="txtSearch" type="text" class="form-control" placeholder="<?= Yii::t('ckeditorRoxyFileman', 'Search for...') ?>">
-                                <i class="fa fa-search"></i>
+                </div>
+                <div class="actions second-row">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button type="button" data-action="switch_view" data-name="list_view" class="btn btn-default <?= $module->defaultView != 'list' ?: 'btn-primary' ?>" title="<?= Yii::t('ckeditorRoxyFileman', 'List view') ?>">
+                                <i class="fa fa-list"></i>
+                            </button>
+                            <button type="button" data-action="switch_view" data-name="thumb_view" class="btn btn-default <?= $module->defaultView != 'thumb' ?: 'btn-primary' ?>" title="<?= Yii::t('ckeditorRoxyFileman', 'Thumbnails view') ?>">
+                                <i class="fa fa-picture-o"></i>
+                            </button>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-inline">
+                                <div class="form-group form-group-sm form-search">
+                                    <input id="txtSearch" type="text" class="form-control" placeholder="<?= Yii::t('ckeditorRoxyFileman', 'Search for...') ?>">
+                                    <i class="fa fa-search"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="file-body">
-                <div class="scrollPane file-list" data-url="<?= $fileListUrl ?>">
-                    <div class="sort-actions" style="display: <?= $module->defaultView == 'list' ? 'block' : 'none' ?>;">
-                        <div class="row">
-                            <div class="col-sm-7">
-                                <div class="pull-left <?= ($defaultOrder == FolderHelper::SORT_NAME_ASC || $defaultOrder == FolderHelper::SORT_NAME_DESC) ? 'sorted' : '' ?>" rel="order" data-order="name" data-sort="<?= $defaultOrder == FolderHelper::SORT_NAME_ASC ? 'asc' : 'desc' ?>">
-                                    <i class="fa fa-long-arrow-up"></i>
-                                    <i class="fa fa-long-arrow-down"></i>
-                                    <span> <?= Yii::t('ckeditorRoxyFileman', 'Name') ?></span>
+                <div class="file-body">
+                    <div class="scrollPane file-list" data-url="<?= $fileListUrl ?>">
+                        <div class="sort-actions" style="display: <?= $module->defaultView == 'list' ? 'block' : 'none' ?>;">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="pull-left <?= ($defaultOrder == FolderHelper::SORT_NAME_ASC || $defaultOrder == FolderHelper::SORT_NAME_DESC) ? 'sorted' : '' ?>" rel="order" data-order="name" data-sort="<?= $defaultOrder == FolderHelper::SORT_NAME_ASC ? 'asc' : 'desc' ?>">
+                                        <i class="fa fa-long-arrow-up"></i>
+                                        <i class="fa fa-long-arrow-down"></i>
+                                        <span> <?= Yii::t('ckeditorRoxyFileman', 'Name') ?></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="pull-right <?= ($defaultOrder == FolderHelper::SORT_SIZE_ASC || $defaultOrder == FolderHelper::SORT_SIZE_DESC) ? 'sorted' : '' ?>" rel="order" data-order="size" data-sort="<?= $defaultOrder == FolderHelper::SORT_SIZE_ASC ? 'asc' : 'desc' ?>">
-                                    <i class="fa fa-long-arrow-up"></i>
-                                    <i class="fa fa-long-arrow-down"></i>
-                                    <span> <?= Yii::t('ckeditorRoxyFileman', 'Size') ?></span>
+                                <div class="col-sm-2">
+                                    <div class="pull-right <?= ($defaultOrder == FolderHelper::SORT_SIZE_ASC || $defaultOrder == FolderHelper::SORT_SIZE_DESC) ? 'sorted' : '' ?>" rel="order" data-order="size" data-sort="<?= $defaultOrder == FolderHelper::SORT_SIZE_ASC ? 'asc' : 'desc' ?>">
+                                        <i class="fa fa-long-arrow-up"></i>
+                                        <i class="fa fa-long-arrow-down"></i>
+                                        <span> <?= Yii::t('ckeditorRoxyFileman', 'Size') ?></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="pull-right <?= ($defaultOrder == FolderHelper::SORT_DATE_ASC || $defaultOrder == FolderHelper::SORT_DATE_DESC) ? 'sorted' : '' ?>" rel="order" data-order="date" data-sort="<?= $defaultOrder == FolderHelper::SORT_DATE_ASC ? 'asc' : 'desc' ?>">
-                                    <i class="fa fa-long-arrow-up"></i>
-                                    <i class="fa fa-long-arrow-down"></i>
-                                    <span> <?= Yii::t('ckeditorRoxyFileman', 'Date') ?></span>
+                                <div class="col-sm-3">
+                                    <div class="pull-right <?= ($defaultOrder == FolderHelper::SORT_DATE_ASC || $defaultOrder == FolderHelper::SORT_DATE_DESC) ? 'sorted' : '' ?>" rel="order" data-order="date" data-sort="<?= $defaultOrder == FolderHelper::SORT_DATE_ASC ? 'asc' : 'desc' ?>">
+                                        <i class="fa fa-long-arrow-up"></i>
+                                        <i class="fa fa-long-arrow-down"></i>
+                                        <span> <?= Yii::t('ckeditorRoxyFileman', 'Date') ?></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="file-list-item"></div>
                     </div>
-                    <div class="file-list-item"></div>
                 </div>
             </div>
         </div>

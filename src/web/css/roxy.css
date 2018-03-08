@@ -1,3 +1,8 @@
+html{
+    height: 100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+
 body {
     font-family: Verdana;
     font-size: 11px;
@@ -13,6 +18,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    min-height: 100%;
 }
 
 a {
@@ -44,8 +50,8 @@ section.footer .status {
 }
 
 section.body {
-    position: relative;
-    height: 90%;
+    /*position: relative;*/
+    height: 100%;
 }
 
 section.body .actions, section.body .file-body {
@@ -57,10 +63,12 @@ section.body .progress {
     text-align: center;
     margin-top: 10px;
 }
-
+section.body .row {
+    height: 100%;
+}
 section.body .left-body {
     border-right: 1px solid #ddd;
-    height: 100%;
+    min-height: 100%;
 }
 
 section.body .left-body .folder-list.treeview {
@@ -166,10 +174,12 @@ input[type=file] {
 }
 
 section.footer {
+    background: #fff;
     position: absolute;
     bottom: 0;
     width: 100%;
     border-top: 1px solid #ddd;
+    z-index: 1;
 }
 
 .file-list-item {

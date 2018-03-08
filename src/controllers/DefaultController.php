@@ -26,7 +26,7 @@ class DefaultController extends Controller
      */
     public function actionIndex($type)
     {
-        /*         * @var Module $module */
+        $this->layout = 'main';
         $module = Yii::$app->getModule('ckeditorRoxyFileman');
         $uploadForm = new UploadForm();
         $defaultFolder = '';
@@ -43,7 +43,7 @@ class DefaultController extends Controller
             'folder' => $defaultFolder,
             'sort' => $defaultOrder,
         ]);
-        return $this->renderAjax('index', [
+        return $this->render('index', [
             'module' => $module,
             'uploadForm' => $uploadForm,
             'fileListUrl' => $fileListUrl,
