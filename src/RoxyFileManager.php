@@ -15,6 +15,14 @@ use yii\helpers\ArrayHelper;
 class RoxyFileManager
 {
     /**
+     * Return filemanager Url
+     */
+    public static function getUrl($type = 'image')
+    {
+        $managerUrl = Yii::$app->urlManager->createUrl('/ckeditorRoxyFileman/default').'?type='.$type;
+        return $managerUrl;
+    }
+    /**
      * Creates RoxyFileManager CKEditor options.
      *
      * @clientOptions another CKEDitor client options.
@@ -22,11 +30,11 @@ class RoxyFileManager
      */
     public static function attach($cleintOptions = [])
     {
-        $managerUrl = Yii::$app->urlManager->createUrl('/ckeditorRoxyFileman/default');
+
         return ArrayHelper::merge([
-            'filebrowserBrowseUrl' => $managerUrl.'?type=media',
-            'filebrowserImageBrowseUrl' => $managerUrl.'?type=image',
-            'filebrowserFlashBrowseUrl' => $managerUrl.'?type=media',
+            'filebrowserBrowseUrl' => self::getUrl('media'),
+            'filebrowserImageBrowseUrl' => self::getUrl('image'),
+            'filebrowserFlashBrowseUrl' => self::getUrl('media'),
         ], $cleintOptions);
     }
 }
