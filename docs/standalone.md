@@ -61,10 +61,10 @@ BootstrapTreeviewAsset::register($this);
                 <div class="row">
                     <div class="col-sm-12">
                         <iframe src="<?= Url::to([
-                                RoxyFileManager::getUrl(),
-                                'type'   => 'image',
-                                'input'  => 'fieldID2',
-                                'dialog' => 'modal',
+                            RoxyFileManager::getUrl(),
+                            'type'   => 'image',
+                            'input'  => 'fieldID2',
+                            'dialog' => 'modal',
                         ]) ?>" height="470px" width="100%"></iframe>
                     </div>
                 </div>
