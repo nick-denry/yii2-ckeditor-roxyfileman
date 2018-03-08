@@ -29,6 +29,7 @@ Docs
 ---
 *  [Module configuration](docs/module.md)
 *  [Integrate to CKEditor](docs/ckeditor.md)
+*  [Overriding](docs/overriding.md)
 *  [Standalone](docs/standalone.md)
 
 Screenshot
