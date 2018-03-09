@@ -3,7 +3,7 @@ return [
     'Create'                              => 'Tạo mới',
     'Rename'                              => 'Đổi tên',
     'Delete'                              => 'Xóa',
-    'Add file'                            => 'Thêm tệp',
+    'Upload file'                         => 'Thêm tệp',
     'Preview'                             => 'Xem trước',
     'Rename file'                         => 'Đổi tên',
     'Download'                            => 'Tải xuống',

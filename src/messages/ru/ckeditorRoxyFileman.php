@@ -3,7 +3,7 @@ return [
     'Create'                              => 'Создать',
     'Rename'                              => 'Переименовать',
     'Delete'                              => 'Удалить',
-    'Add file'                            => 'Загрузить файл',
+    'Upload file'                         => 'Загрузить файл',
     'Preview'                             => 'Просмотр',
     'Rename file'                         => 'Переименовать',
     'Download'                            => 'Скачать',

@@ -61,7 +61,7 @@ RoxyMceAsset::register($this);
                                     ]),
                                 ])
                                 ?>
-                                <i class="fa fa-upload"></i> <?= Yii::t('ckeditorRoxyFileman', 'Add file') ?>
+                                <i class="fa fa-upload"></i> <?= Yii::t('ckeditorRoxyFileman', 'Upload file') ?>
                             </label>
                             <a class="btn btn-sm btn-default btn-file-preview ckeditor-dialog-ui-button" disabled="disabled" title="<?= Yii::t('ckeditorRoxyFileman', 'Preview selected file') ?>">
                                 <i class="fa fa-search"></i> <?= Yii::t('ckeditorRoxyFileman', 'Preview') ?>
