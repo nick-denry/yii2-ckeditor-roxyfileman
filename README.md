@@ -6,6 +6,8 @@
     <br>
 </p>
 
+[![Latest Stable Version](https://poser.pugx.org/nick-denry/yii2-ckeditor-roxyfileman/v/stable)](https://packagist.org/packages/nick-denry/yii2-ckeditor-roxyfileman) [![Total Downloads](https://poser.pugx.org/nick-denry/yii2-ckeditor-roxyfileman/downloads)](https://packagist.org/packages/nick-denry/yii2-ckeditor-roxyfileman) [![Latest Unstable Version](https://poser.pugx.org/nick-denry/yii2-ckeditor-roxyfileman/v/unstable)](https://packagist.org/packages/nick-denry/yii2-ckeditor-roxyfileman) [![License](https://poser.pugx.org/nick-denry/yii2-ckeditor-roxyfileman/license)](https://packagist.org/packages/nick-denry/yii2-ckeditor-roxyfileman) 
+
 Installation
 ------------
 
