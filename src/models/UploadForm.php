@@ -10,6 +10,8 @@ use nickdenry\ckeditorRoxyFileman\helpers\FileHelper;
 use nickdenry\ckeditorRoxyFileman\Module;
 use yii\base\Model;
 use yii\web\UploadedFile;
+use Imagine\Image\Box;
+use yii\imagine\Image;
 
 class UploadForm extends Model
 {
@@ -43,6 +45,7 @@ class UploadForm extends Model
      */
     public function upload($folder)
     {
+        $module = \Yii::$app->getModule('ckeditorRoxyFileman');
         if ($this->validate()) {
             foreach ($this->file as $file) {
                 $filePath = $folder . DIRECTORY_SEPARATOR . FileHelper::removeSign($file->baseName) . '.' . $file->extension;
@@ -50,6 +53,10 @@ class UploadForm extends Model
                     $filePath = $folder . DIRECTORY_SEPARATOR . FileHelper::removeSign($file->baseName) . '_' . time() . '.' . $file->extension;
                 }
                 $file->saveAs($filePath);
+                $mime = explode('/', mime_content_type($filePath));
+                if(isset($mime[0]) && $mime[0] == 'image' && $module->imageResize == true){
+                    Image::getImagine()->open($filePath)->thumbnail(new Box($module->imageWidth, $module->imageHeight))->save($filePath , ['quality' => $module->imageQuality]);
+                }
             }
             return true;
         } else {
