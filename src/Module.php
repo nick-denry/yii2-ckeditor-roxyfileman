@@ -55,12 +55,17 @@ class Module extends \navatech\base\Module
     /**
     * @var integer image width for resize
     **/
-    public $image_width = 600;
+    public $imageWidth = 600;
     
     /**
     * @var integer image height for resize
     **/
-    public $image_height = 400;
+    public $imageHeight = 400;
+    
+    /**
+    * @var integer image height for resize
+    **/
+    public $imageQuality = 90;
     
     /**
      * @var string default allowed files extension
