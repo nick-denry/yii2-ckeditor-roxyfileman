@@ -46,7 +46,22 @@ class Module extends \navatech\base\Module
      * @var bool would you want to remember last sort order?
      */
     public $rememberLastOrder = true;
-
+    
+    /**
+    * @var bool would you want to resize image?
+    **/
+    public $imageResize = false;
+    
+    /**
+    * @var integer image width for resize
+    **/
+    public $image_width = 600;
+    
+    /**
+    * @var integer image height for resize
+    **/
+    public $image_height = 400;
+    
     /**
      * @var string default allowed files extension
      */
