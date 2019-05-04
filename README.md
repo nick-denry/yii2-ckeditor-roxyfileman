@@ -31,7 +31,7 @@ Docs
 ---
 *  [Module configuration](docs/module.md)
 *  [Integrate to CKEditor](docs/ckeditor.md)
-*  [Handle file after upload](docs/events.md)
+*  [Handle files after upload](docs/events.md)
 *  [Overriding](docs/overriding.md)
 *  [Standalone](docs/standalone.md)
 
