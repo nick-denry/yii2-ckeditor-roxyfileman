@@ -22,7 +22,7 @@ php composer.phar require --prefer-dist nick-denry/yii2-ckeditor-roxyfileman
 or add
 
 ```
-"nick-denry/yii2-ckeditor-roxyfileman": "^0.1.0"
+"nick-denry/yii2-ckeditor-roxyfileman": "^0.1.3"
 ```
 
 to the require section of your `composer.json` file.
