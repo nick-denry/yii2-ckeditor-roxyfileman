@@ -6,6 +6,7 @@
 
 namespace nickdenry\ckeditorRoxyFileman\models;
 
+use nickdenry\ckeditorRoxyFileman\events\FileEvent;
 use nickdenry\ckeditorRoxyFileman\helpers\FileHelper;
 use nickdenry\ckeditorRoxyFileman\Module;
 use yii\base\Model;
@@ -13,6 +14,9 @@ use yii\web\UploadedFile;
 
 class UploadForm extends Model
 {
+    
+    const EVENT_FILE_UPLOADED = 'ckeditorRoxyFileman.fileUploaded';
+    
     /**
      * @var UploadedFile[]
      */
@@ -50,6 +54,9 @@ class UploadForm extends Model
                     $filePath = $folder . DIRECTORY_SEPARATOR . FileHelper::removeSign($file->baseName) . '_' . time() . '.' . $file->extension;
                 }
                 $file->saveAs($filePath);
+                $event = new FileEvent();
+                $event->fileName = $filePath;
+                \Yii::$app->trigger(self::EVENT_FILE_UPLOADED, $event);
             }
             return true;
         } else {
