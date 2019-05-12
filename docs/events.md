@@ -25,8 +25,8 @@ namespace backend\helpers;
 class ThumbnailHelper {
     public static function createThumbnail($event) {
         \Yii::info($event->fileName); // $event->fileName contains filesystem full path to file 
-        // Some thumbnail operations
-        //Image::getImagine()->open($event->fileName)->thumbnail(new Box(600, 600))->save($event->fileName, ['quality' => 100]);
+        // Some thumbnail operations, i.e.
+        // Image::getImagine()->open($event->fileName)->thumbnail(new Box(600, 600))->save($event->fileName, ['quality' => 100]);
     }
 }
 ```
