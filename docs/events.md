@@ -19,12 +19,14 @@ Thumbnail helper with your favourite graphics library, i.e. [yii2-imagine](https
 namespace backend\helpers;
 
 // use Imagine\Image\Box; 
+// use Imagine\Image;
 // etc
 
 class ThumbnailHelper {
     public static function createThumbnail($event) {
         \Yii::info($event->fileName); // $event->fileName contains filesystem full path to file 
         // Some thumbnail operations
+        //Image::getImagine()->open($event->fileName)->thumbnail(new Box(600, 600))->save($event->fileName, ['quality' => 100]);
     }
 }
 ```
