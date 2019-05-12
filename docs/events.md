@@ -9,7 +9,7 @@ Add event and handler to app config, i.e. `backend\config\main.php`
 ```php
 'modules' => [],
 'on ckeditorRoxyFileman.fileUploaded' => [
-    'backend\helpers\ThumbnailHelper', 'createThumbnail`'
+    'backend\helpers\ThumbnailHelper', 'createThumbnail'
 ],
 ```
 
