@@ -1,6 +1,11 @@
 Module configure
 ---
+
+One should include this module array in the Yii2 framework under the configuration file. For advanced template users, you can find this file under `backend/config/main.php` and `frontend/config/main.php` folders.
+
 ### Property
+
+The following properties can be set in the ckeditorRoxyFileman object to specify the instances behaviour
 
 * `uploadFolder` the directory where stored files. Default is `@app/web/uploads/images`. If folder not existed, roxy will auto-create it.
 * `uploadUrl` the url which can get folder link. Default is `/uploads/images`. If you are using `yii2-advanced` should include scheme (`http://frontend.domain.com/uploads/images`).
@@ -13,11 +18,15 @@ Module configure
 ### Example
 Add to config file:
 ```php
-'modules' => [
-    'ckeditorRoxyFileman' => [
-        'class' => 'nickdenry\ckeditorRoxyFileman\Module',
-        'uploadFolder' => '@frontend/web/uploads/images',
-        'uploadUrl' => '/uploads/images',
+<?php
+return [
+    'modules' => [
+        'ckeditorRoxyFileman' => [
+            'class' => 'nickdenry\ckeditorRoxyFileman\Module',
+            'uploadFolder' => '@frontend/web/uploads/images',
+            'uploadUrl' => '/uploads/images',
+        ],
     ],
-],
+];
+?>
 ```

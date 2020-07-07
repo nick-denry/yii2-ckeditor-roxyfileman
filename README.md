@@ -27,6 +27,11 @@ or add
 
 to the require section of your `composer.json` file.
 
+Requirements
+------------
+*  php_exif extension for image preview
+*  url_rewrite for enablePrettyUrl in yii2 config
+
 Docs
 ---
 *  [Module configuration](docs/module.md)
