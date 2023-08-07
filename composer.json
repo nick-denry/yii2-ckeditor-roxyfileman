@@ -26,7 +26,7 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "ext-zip": "*",
-        "navatech/yii2-navatech-base": "1.0.0.2",
+        "phuongdev89/yii2-base": "dev-master",
         "bower-asset/fontawesome": "^4.6",
         "bower-asset/patternfly-bootstrap-treeview": "~2.1",
         "bower-asset/jquery.lazyload": "~1.9",
